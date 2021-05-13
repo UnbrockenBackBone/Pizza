@@ -11,8 +11,8 @@
                         <div class="nav_manu">
                             <div class="Menu_list">
                                 <ul class="menu">
-                                    <li><a href="index.html" class="trans hvr-underline-from-left">Home</a></li>
-                                    <li><a href="about.html" class="trans">About</a></li>
+                                    <li><a asp-controller="Home" asp-action="Index" class="trans hvr-underline-from-left">Home</a></li>
+                                    <li><a asp-controller="Home" asp-action="About" class="trans">About</a></li>
                                     <li><a href="menu.html" class="trans">Order</a></li>
                                     <li><a href="login.html" class="trans">Login</a></li>
                                     <li><a href="login.html" class="trans">Register</a></li>
@@ -33,29 +33,38 @@
         <button id="burger" class="open-main-nav">
             <span class="burger"></span>
         </button>
-        <div class="H_banner home">
-            <div class="main_pitch">
-                <h1 class="page_title">Order Online Your Food</h1>
-                <h3 class="cntct">Call us<span class="call_desk"><a href="tel:+01234567890" id="typewriter_num"></a></span></h3>
+        @if (ViewData["Title"].ToString() == "Home Page")
+        {
+            <div class="H_banner home">
+                <div class="main_pitch">
+                    <h1 class="page_title">Order Online Your Food</h1>
+                    <h3 class="cntct">Call us<span class="call_desk"><a href="tel:+01234567890" id="typewriter_num"></a></span></h3>
+                </div>
             </div>
-        </div>
-        <div class="bottom_pitch">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="main_bpitch">
-                            <ul>
-                                <li class="pizza active"><a href="menu.html" class="trans" title="Pizza"><span class="icon">Pizza</span></a></li>
-                                <li class="burger1"><a href="menu.html" class="trans" title="Burgers"><span class="icon">Burgers</span></a></li>
-                                <li class="salads"><a href="menu.html" class="trans" title="Salads"><span class="icon">Salads</span></a></li>
-                                <li class="fries"><a href="menu.html" class="trans" title="Fries"><span class="icon">Fries</span></a></li>
-                                <li class="drinks"><a href="menu.html" class="trans" title="Drinks"><span class="icon">Drinks</span></a></li>
-                            </ul>
+            <div class="bottom_pitch">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="main_bpitch">
+                                <ul>
+                                    <li class="pizza active"><a href="menu.html" class="trans" title="Pizza"><span class="icon">Pizza</span></a></li>
+                                    <li class="burger1"><a href="menu.html" class="trans" title="Burgers"><span class="icon">Burgers</span></a></li>
+                                    <li class="salads"><a href="menu.html" class="trans" title="Salads"><span class="icon">Salads</span></a></li>
+                                    <li class="fries"><a href="menu.html" class="trans" title="Fries"><span class="icon">Fries</span></a></li>
+                                    <li class="drinks"><a href="menu.html" class="trans" title="Drinks"><span class="icon">Drinks</span></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        } else {
+            <div class="H_banner">
+                <div class="main_pitch">
+                    <h1 class="page_title">@ViewData["Title"]</h1>
+                </div>
+            </div>
+        }
     </div>
     <div class="device">
         <nav class="main-nav" id="main-nav">
@@ -63,8 +72,8 @@
                 <a href="index.html" title="Crave Ordering"><img src="~/images/logoBlack.png" alt="Crave Ordering"></a>
             </div>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Home" asp-action="About">About</a></li>
                 <li><a href="menu.html">Order</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="login.html">Register</a></li>
