@@ -17,7 +17,7 @@ namespace Pizza.Domain.Repositories.EntityFramework
 
         public IQueryable<Product> GetProducts()
         {
-            return context.PostItems;
+            return context.Products;
         }
 
         public Product GetProductsByCategoryName(string category)
