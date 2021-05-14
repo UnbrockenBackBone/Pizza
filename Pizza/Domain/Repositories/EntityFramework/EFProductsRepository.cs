@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Pizza.Domain.Repositories.EntityFramework
 {
-    public class EFProductRepository : IProductRepository
+    public class EFProductsRepository : IProductsRepository
     {
         private readonly PizzaDbContext context;
-        public EFProductRepository(PizzaDbContext context)
+        public EFProductsRepository(PizzaDbContext context)
         {
             this.context = context;
         }
@@ -22,12 +22,12 @@ namespace Pizza.Domain.Repositories.EntityFramework
 
         public Product GetProductsByCategoryName(string category)
         {
-            throw new NotImplementedException();
+            return context.Products.FirstOrDefault(x => x.Category == category);
         }
 
         public Product GetProductsById(Guid id)
         {
-            throw new NotImplementedException();
+            return context.Products.FirstOrDefault(x => x.Id == id);
         }
     }
 }

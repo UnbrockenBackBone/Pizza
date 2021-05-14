@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pizza.Domain.Repositories.Abstract
 {
-    public interface IProductRepository
+    public interface IProductsRepository
     {
         IQueryable<Product> GetProducts();
         Product GetProductsById(Guid id);

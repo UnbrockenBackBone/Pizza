@@ -1,10 +1,16 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pizza.Domain;
+using Pizza.Domain.Entities;
+using Pizza.Domain.Repositories.Abstract;
+using Pizza.Domain.Repositories.EntityFramework;
 using Pizza.Service;
 using System;
 using System.Collections.Generic;
@@ -26,6 +32,34 @@ namespace Pizza
         public void ConfigureServices(IServiceCollection services)
         {
             Configuration.Bind("Project", new Config());
+
+            //подключаем нужный функционал приложения
+            services.AddTransient<IProductsRepository, EFProductsRepository>();
+            services.AddTransient<DataManager>();
+
+            //Подключаем контекст
+            services.AddDbContext<PizzaDbContext>(x => x.UseSqlServer(Config.ConnectionString));
+
+            //настройка identity системы
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
+                options.User.RequireUniqueEmail = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireDigit = false;
+            }).AddEntityFrameworkStores<PizzaDbContext>().AddDefaultTokenProviders();
+
+            //настраиваем cookie
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.Name = "PizzaAuth";
+                options.Cookie.HttpOnly = true;
+                options.LoginPath = "/account/login";
+                options.AccessDeniedPath = "/account/accessdenied";
+                options.SlidingExpiration = true;
+            });
 
             services.AddControllersWithViews()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
@@ -50,6 +84,9 @@ namespace Pizza
 
             app.UseRouting();
 
+            //подключаем авторизацию и аутентификацию
+            app.UseCookiePolicy();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
