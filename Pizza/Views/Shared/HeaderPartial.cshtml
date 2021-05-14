@@ -6,20 +6,20 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="logo">
-                            <a href="index.html" title="Crave Ordering"><img src="~/images/logo.png" alt="Crave Ordering"></a>
+                            <a asp-controller="Home" asp-action="Index" title="Crave Ordering"><img src="~/images/logo.png" alt="Crave Ordering"></a>
                         </div>
                         <div class="nav_manu">
                             <div class="Menu_list">
                                 <ul class="menu">
                                     <li><a asp-controller="Home" asp-action="Index" class="trans hvr-underline-from-left">Home</a></li>
                                     <li><a asp-controller="Home" asp-action="About" class="trans">About</a></li>
-                                    <li><a href="menu.html" class="trans">Order</a></li>
-                                    <li><a href="login.html" class="trans">Login</a></li>
-                                    <li><a href="login.html" class="trans">Register</a></li>
+                                    <li><a asp-controller="Menu" asp-action="Index" class="trans">Order</a></li>
+                                    <li><a asp-controller="Account" asp-action="Login" class="trans">Login</a></li>
+                                    <li><a asp-controller="Account" asp-action="Register" class="trans">Register</a></li>
                                 </ul>
                             </div>
                             <div class="Cart">
-                                <a href="cart.html" title="Cart">
+                                <a asp-controller="Menu" asp-action="Cart" title="Cart">
                                     <span class="Cart_count">Cart : (0) $00.00</span>
                                     <!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> -->
                                     <img class="cart_img" src="~/images/cart_1.png" alt="cart_1">
@@ -47,11 +47,11 @@
                         <div class="col-md-12">
                             <div class="main_bpitch">
                                 <ul>
-                                    <li class="pizza active"><a href="menu.html" class="trans" title="Pizza"><span class="icon">Pizza</span></a></li>
-                                    <li class="burger1"><a href="menu.html" class="trans" title="Burgers"><span class="icon">Burgers</span></a></li>
-                                    <li class="salads"><a href="menu.html" class="trans" title="Salads"><span class="icon">Salads</span></a></li>
-                                    <li class="fries"><a href="menu.html" class="trans" title="Fries"><span class="icon">Fries</span></a></li>
-                                    <li class="drinks"><a href="menu.html" class="trans" title="Drinks"><span class="icon">Drinks</span></a></li>
+                                    <li class="pizza active"><a asp-controller="Menu" asp-action="Index" class="trans" title="Pizza"><span class="icon">Pizza</span></a></li>
+                                    <li class="burger1"><a asp-controller="Menu" asp-action="Index" class="trans" title="Burgers"><span class="icon">Burgers</span></a></li>
+                                    <li class="salads"><a asp-controller="Menu" asp-action="Index" class="trans" title="Salads"><span class="icon">Salads</span></a></li>
+                                    <li class="fries"><a asp-controller="Menu" asp-action="Index" class="trans" title="Fries"><span class="icon">Fries</span></a></li>
+                                    <li class="drinks"><a asp-controller="Menu" asp-action="Index" class="trans" title="Drinks"><span class="icon">Drinks</span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -69,14 +69,14 @@
     <div class="device">
         <nav class="main-nav" id="main-nav">
             <div class="logo">
-                <a href="index.html" title="Crave Ordering"><img src="~/images/logoBlack.png" alt="Crave Ordering"></a>
+                <a asp-controller="Home" asp-action="Index" title="Crave Ordering"><img src="~/images/logoBlack.png" alt="Crave Ordering"></a>
             </div>
             <ul>
                 <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                 <li><a asp-controller="Home" asp-action="About">About</a></li>
-                <li><a href="menu.html">Order</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="login.html">Register</a></li>
+                <li><a asp-controller="Menu" asp-action="Index">Order</a></li>
+                <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                <li><a asp-controller="Account" asp-action="Login">Register</a></li>
             </ul>
         </nav>
     </div>
