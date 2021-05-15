@@ -20,11 +20,15 @@ namespace Pizza.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.isAut = HttpContext.User.Identity.IsAuthenticated;
+            ViewBag.Name = HttpContext.User.Identity.Name;
             return View();
         }
 
         public IActionResult About()
         {
+            ViewBag.isAut = HttpContext.User.Identity.IsAuthenticated;
+            ViewBag.Name = HttpContext.User.Identity.Name;
             return View();
         }
 

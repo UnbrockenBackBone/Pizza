@@ -1,4 +1,5 @@
-﻿@{ ViewData["Title"] = "Register"; }
+﻿@model RegisterViewModel
+@{ ViewData["Title"] = "Register"; }
 
 <!-- breadcum section -->
 
@@ -29,32 +30,34 @@
                             <div class="login_box">
                                 <h2 class="title">Create New Account</h2>
                                 <h4 class="create_ac">Create your Account</h4>
-                                <form method="post" id="registrationform" action="thank-you.html">
+                                <form asp-controller="Account" asp-action="Register" method="post" asp-route-returnUrl="@ViewBag.returnUrl" id="registrationform">
+                                    <div asp-validation-summary="All"></div>
                                     <ul>
                                         <li>
-                                            <label for="EmailAddress">Email Address</label>
-                                            <input class="form-control" name="registeremail" title="Email Address" type="email">
+                                            <label asp-for="Email">Email Address</label>
+                                            <input asp-for="Email" class="form-control" id="EmailAddress" title="Email Address" type="email">
+                                            <span asp-validation-for="Email"></span>
+                                        </li>
+                                        <li>
+                                            <label asp-for="UserName">User Name</label>
+                                            <input asp-for="UserName" class="form-control" id="UserName" title="Email Address" type="text">
+                                            <span asp-validation-for="UserName"></span>
+                                        </li>
+                                        <li>
+                                            <label asp-for="Password">Password</label>
+                                            <input asp-for="Password" class="form-control" title="Password" id="Password" name="password" type="password">
+                                            <span asp-validation-for="Password"></span>
+                                        </li>
+                                        <li>
+                                            <label asp-for="PasswordConfirm">Confirm Password</label>
+                                            <input asp-for="PasswordConfirm" class="form-control" title="Password" id="Password" name="passwordConfirm" type="password">
+                                            <span asp-validation-for="PasswordConfirm"></span>
                                         </li>
                                         <li>
                                             <button type="submit" class="register-btn red_btn trans squre-btn hvr-ripple-out" name="Register">Register</button>
                                         </li>
                                     </ul>
                                 </form>
-                                <h4 class="title_checklist">Sign up today and you will be able to :</h4>
-                                <ul class="checklist">
-                                    <li class="checkbox">
-                                        <input id="check1" type="checkbox" name="check" value="Bike">
-                                        <label for="check1">Speed your way through the checkout</label>
-                                    </li>
-                                    <li class="checkbox">
-                                        <input id="check2" type="checkbox" name="check" value="Bike">
-                                        <label for="check2">Track your orders easily</label>
-                                    </li>
-                                    <li class="checkbox">
-                                        <input id="check3" type="checkbox" name="check" value="Bike">
-                                        <label for="check3">Keep a record of all your purchases</label>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>

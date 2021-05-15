@@ -1,4 +1,5 @@
-﻿@{ ViewData["Title"] = "Login"; }
+﻿@model LoginViewModel
+@{ ViewData["Title"] = "Login"; }
 
 <!-- breadcum section -->
 
@@ -28,20 +29,22 @@
                         <div class="login_left col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="login_box">
                                 <h2 class="title">Sign in</h2>
-                                <form method="post" id="loginform" action="thank-you.html">
+                                <form asp-controller="Account" asp-action="Login" method="post" asp-route-returnUrl="@ViewBag.returnUrl" id="loginform">
                                     <div class="login_form">
                                         <ul>
                                             <li>
-                                                <label for="EmailAddress">Email Address</label>
-                                                <input class="form-control" id="EmailAddress" name="emailaddress" title="Email Address" type="email">
+                                                <label asp-for="Email">Email Address</label>
+                                                <input asp-for="Email" class="form-control" id="EmailAddress" title="Email Address" type="email">
+                                                <span asp-validation-for="Email"></span>
                                             </li>
                                             <li>
-                                                <label for="Password">Password</label>
-                                                <input class="form-control" title="Password" id="Password" name="password" type="password">
+                                                <label asp-for="Password">Password</label>
+                                                <input asp-for="Password" class="form-control" title="Password" id="Password" name="password" type="password">
+                                                <span asp-validation-for="Password"></span>
                                             </li>
                                             <li class="half checkbox">
-                                                <input id="check4" type="checkbox" name="check" value="Bike">
-                                                <label for="check4">Remember Me</label>
+                                                <input asp-for="RememberMe" id="check4" type="checkbox" name="check" value="Bike">
+                                                <label asp-for="RememberMe">Remember Me</label>
                                             </li>
                                             <li class="half text-right">
                                                 <a href="#" class="trans">Forgotten Password ?</a>
@@ -54,38 +57,6 @@
                                 </form>
                             </div>
                         </div>
-                        @*<div class="signup_right col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="login_box">
-                                <h2 class="title">Create New Account</h2>
-                                <h4 class="create_ac">Create your Account</h4>
-                                <form method="post" id="registrationform" action="thank-you.html">
-                                    <ul>
-                                        <li>
-                                            <label for="EmailAddress">Email Address</label>
-                                            <input class="form-control" name="registeremail" title="Email Address" type="email">
-                                        </li>
-                                        <li>
-                                            <button type="submit" class="register-btn red_btn trans squre-btn hvr-ripple-out" name="Register">Register</button>
-                                        </li>
-                                    </ul>
-                                </form>
-                                <h4 class="title_checklist">Sign up today and you will be able to :</h4>
-                                <ul class="checklist">
-                                    <li class="checkbox">
-                                        <input id="check1" type="checkbox" name="check" value="Bike">
-                                        <label for="check1">Speed your way through the checkout</label>
-                                    </li>
-                                    <li class="checkbox">
-                                        <input id="check2" type="checkbox" name="check" value="Bike">
-                                        <label for="check2">Track your orders easily</label>
-                                    </li>
-                                    <li class="checkbox">
-                                        <input id="check3" type="checkbox" name="check" value="Bike">
-                                        <label for="check3">Keep a record of all your purchases</label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>*@
                     </div>
                 </div>
             </div>

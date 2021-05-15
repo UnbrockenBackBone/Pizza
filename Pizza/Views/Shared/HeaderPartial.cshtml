@@ -14,8 +14,17 @@
                                     <li><a asp-controller="Home" asp-action="Index" class="trans hvr-underline-from-left">Home</a></li>
                                     <li><a asp-controller="Home" asp-action="About" class="trans">About</a></li>
                                     <li><a asp-controller="Menu" asp-action="Index" class="trans">Order</a></li>
-                                    <li><a asp-controller="Account" asp-action="Login" class="trans">Login</a></li>
-                                    <li><a asp-controller="Account" asp-action="Register" class="trans">Register</a></li>
+                                    @{
+                                        if (!ViewBag.isAut)
+                                        {
+                                            <li><a asp-controller="Account" asp-action="Login" class="trans">Login</a></li>
+                                            <li><a asp-controller="Account" asp-action="Register" class="trans">Register</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a asp-controller="account" asp-action="logout" class="trans">@ViewBag.Name</a></li>
+                                        }
+                                    }
                                 </ul>
                             </div>
                             <div class="Cart">
