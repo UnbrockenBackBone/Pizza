@@ -49,7 +49,7 @@ namespace Pizza.Domain
                 Name = "Deluxe",
                 Price = 10,
                 Subtitle = "original & favorite specialty pizza topped",
-                TitleImagePath = "~/images/pizza_img2.jpg"
+                TitleImagePath = "/images/pizza_img2.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -57,7 +57,7 @@ namespace Pizza.Domain
                 Name = "Veggie",
                 Price = 10,
                 Subtitle = "Veggie lovers rejoice! Pizza topped with mushrooms",
-                TitleImagePath = "~/images/pizza_img2.jpg"
+                TitleImagePath = "/images/pizza_img2.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -65,7 +65,7 @@ namespace Pizza.Domain
                 Name = "All Meat",
                 Price = 10,
                 Subtitle = "Our famous meat pizza is topped",
-                TitleImagePath = "~/images/pizza_img3.jpg"
+                TitleImagePath = "/images/pizza_img3.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -73,7 +73,7 @@ namespace Pizza.Domain
                 Name = "Barbecue Chicken",
                 Price = 10,
                 Subtitle = "Tangy, rich, our homemade BBQ Chicken pizza",
-                TitleImagePath = "~/images/pizza_img4.jpg"
+                TitleImagePath = "/images/pizza_img4.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -81,7 +81,7 @@ namespace Pizza.Domain
                 Name = "Egg-ceptional",
                 Price = 10,
                 Subtitle = "Enjoy breakfast anytime of the day! Our breakfast pizza",
-                TitleImagePath = "~/images/pizza_img4.jpg"
+                TitleImagePath = "/images/pizza_img4.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -89,7 +89,7 @@ namespace Pizza.Domain
                 Name = "lunch Special Pizza",
                 Price = 10,
                 Subtitle = "one-topping pizza and a16 ounce drink Specialties",
-                TitleImagePath = "~/images/pizza_img5.jpg"
+                TitleImagePath = "/images/pizza_img5.png"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -97,7 +97,7 @@ namespace Pizza.Domain
                 Name = "Buffalo Chicken",
                 Price = 10,
                 Subtitle = "Pizza with Chicken, Hot Sauce, Ranch Dressing",
-                TitleImagePath = "~/images/pizza_img6.jpg"
+                TitleImagePath = "/images/pizza_img6.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -105,7 +105,7 @@ namespace Pizza.Domain
                 Name = "Tuscan Roma",
                 Price = 10,
                 Subtitle = "Pizza with Roma Tomatoes, Spinach, Alfredo Sauce",
-                TitleImagePath = "~/images/pizza_img1.jpg"
+                TitleImagePath = "/images/pizza_img1.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -113,7 +113,7 @@ namespace Pizza.Domain
                 Name = "Mac & Cheese",
                 Price = 10,
                 Subtitle = "Pizza with Macaroni and Cheese",
-                TitleImagePath = "~/images/pizza_img2.jpg"
+                TitleImagePath = "/images/pizza_img2.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -121,7 +121,7 @@ namespace Pizza.Domain
                 Name = "Luger Burger",
                 Price = 10,
                 Subtitle = "Luger Burger features extra thick bacon and more half pound of beef.",
-                TitleImagePath = "~/images/pro_img2.jpg"
+                TitleImagePath = "/images/pro_img2.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -129,7 +129,7 @@ namespace Pizza.Domain
                 Name = "Le Pigeon Burger",
                 Price = 10,
                 Subtitle = "Le Pigeon Burger has smoky flavor enhanced with each topping",
-                TitleImagePath = "~/images/pro_img2.jpg"
+                TitleImagePath = "/images/pro_img2.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -137,7 +137,7 @@ namespace Pizza.Domain
                 Name = "Taco Burger",
                 Price = 12,
                 Subtitle = "Tacos are amazing, no doubt about it; need this amazing combo",
-                TitleImagePath = "~/images/pro_img2.jpg"
+                TitleImagePath = "/images/pro_img2.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -145,7 +145,7 @@ namespace Pizza.Domain
                 Name = "Chicken Burger",
                 Price = 15,
                 Subtitle = "The Chicken Caesar Burger is special because it retains the freshness of chicken",
-                TitleImagePath = "~/images/Burgers.jpg"
+                TitleImagePath = "/images/Burgers.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -153,7 +153,7 @@ namespace Pizza.Domain
                 Name = "Cheese Burger",
                 Price = 10,
                 Subtitle = "Easily the best burger in all of Germany, this enormous preparation",
-                TitleImagePath = "~/images/Burgers.jpg"
+                TitleImagePath = "/images/Burgers.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -161,7 +161,7 @@ namespace Pizza.Domain
                 Name = "Chicken Burger",
                 Price = 15,
                 Subtitle = "The Chicken Caesar Burger is special because it retains the freshness of chicken",
-                TitleImagePath = "~/images/Burgers.jpg"
+                TitleImagePath = "/images/Burgers.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -169,7 +169,7 @@ namespace Pizza.Domain
                 Name = "Luger Burger",
                 Price = 10,
                 Subtitle = "Luger Burger features extra thick bacon and more half pound of beef.",
-                TitleImagePath = "~/images/pro_img2.jpg"
+                TitleImagePath = "/images/pro_img2.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -177,7 +177,7 @@ namespace Pizza.Domain
                 Name = "Le Pigeon Burger",
                 Price = 10,
                 Subtitle = "Le Pigeon Burger has smoky flavor enhanced with each topping",
-                TitleImagePath = "~/images/pro_img2.jpg"
+                TitleImagePath = "/images/pro_img2.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -185,7 +185,7 @@ namespace Pizza.Domain
                 Name = "Taco Burger",
                 Price = 12,
                 Subtitle = "Tacos are amazing, no doubt about it; need this amazing combo",
-                TitleImagePath = "~/images/pro_img2.jpg"
+                TitleImagePath = "/images/pro_img2.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -193,7 +193,7 @@ namespace Pizza.Domain
                 Name = "Cobb salad",
                 Price = 10,
                 Subtitle = "The only way to make this dish heavier is to add bricks",
-                TitleImagePath = "~/images/pro_img3.jpg"
+                TitleImagePath = "/images/pro_img3.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -201,7 +201,7 @@ namespace Pizza.Domain
                 Name = "Larb",
                 Price = 10,
                 Subtitle = "It's usually served with raw vegetables and sticky rice. vegetables",
-                TitleImagePath = "~/images/pro_img3.jpg"
+                TitleImagePath = "/images/pro_img3.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -209,7 +209,7 @@ namespace Pizza.Domain
                 Name = "Cobb salad",
                 Price = 10,
                 Subtitle = "The only way to make this dish heavier is to add bricks",
-                TitleImagePath = "~/images/pro_img3.jpg"
+                TitleImagePath = "/images/pro_img3.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -217,7 +217,7 @@ namespace Pizza.Domain
                 Name = "Waldorf salad",
                 Price = 10,
                 Subtitle = "Unlike the many folk salads featured here, Waldorf salad",
-                TitleImagePath = "~/images/pro_img3.jpg"
+                TitleImagePath = "/images/pro_img3.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -225,7 +225,7 @@ namespace Pizza.Domain
                 Name = "Gado-gado",
                 Price = 10,
                 Subtitle = "Gado-gado literally means \"mix - mix.\" It's an Indonesian",
-                TitleImagePath = "~/images/Salad.jpg"
+                TitleImagePath = "/images/Salad.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -233,7 +233,7 @@ namespace Pizza.Domain
                 Name = "Larb",
                 Price = 10,
                 Subtitle = "It's usually served with raw vegetables and sticky rice. vegetables",
-                TitleImagePath = "~/images/pro_img3.jpg"
+                TitleImagePath = "/images/pro_img3.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -241,7 +241,7 @@ namespace Pizza.Domain
                 Name = "Cobb salad",
                 Price = 10,
                 Subtitle = "The only way to make this dish heavier is to add bricks.",
-                TitleImagePath = "~/images/pro_img3.jpg"
+                TitleImagePath = "/images/pro_img3.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -249,7 +249,7 @@ namespace Pizza.Domain
                 Name = "Gado-gado",
                 Price = 10,
                 Subtitle = "Gado-gado literally means \"mix - mix.\" It's an Indonesian",
-                TitleImagePath = "~/images/Salad.jpg"
+                TitleImagePath = "/images/Salad.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -257,7 +257,7 @@ namespace Pizza.Domain
                 Name = "Larb",
                 Price = 10,
                 Subtitle = "It's usually served with raw vegetables and sticky rice. vegetables",
-                TitleImagePath = "~/images/pro_img3.jpg"
+                TitleImagePath = "/images/pro_img3.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -265,7 +265,7 @@ namespace Pizza.Domain
                 Name = "Potato Wedges",
                 Price = 10,
                 Subtitle = "Potato wedges sit at the very bottom of the french fry totem pole",
-                TitleImagePath = "~/images/pro_img4.jpg"
+                TitleImagePath = "/images/pro_img4.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -273,7 +273,7 @@ namespace Pizza.Domain
                 Name = "Waffle Fries",
                 Price = 10,
                 Subtitle = "Waffle fries have the exact opposite problem of the potato wedges",
-                TitleImagePath = "~/images/Fries.jpg"
+                TitleImagePath = "/images/Fries.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -281,7 +281,7 @@ namespace Pizza.Domain
                 Name = "Sweet Potato Fries",
                 Price = 10,
                 Subtitle = "We don't hate sweet potato fries, but we certainly don't love them",
-                TitleImagePath = "~/images/pro_img4.jpg"
+                TitleImagePath = "/images/pro_img4.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -289,7 +289,7 @@ namespace Pizza.Domain
                 Name = "Crinkle Cut Fries",
                 Price = 10,
                 Subtitle = "Crinkle cut fries just look like a good time. They're thick and heavy",
-                TitleImagePath = "~/images/pro_img4.jpg"
+                TitleImagePath = "/images/pro_img4.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -297,7 +297,7 @@ namespace Pizza.Domain
                 Name = "Steak Fries",
                 Price = 10,
                 Subtitle = "Steak fries might seem like the less fun-looking version of crinkle cut fries",
-                TitleImagePath = "~/images/pro_img4.jpg"
+                TitleImagePath = "/images/pro_img4.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -305,7 +305,7 @@ namespace Pizza.Domain
                 Name = "Standard Fries",
                 Price = 10,
                 Subtitle = "Ah, the standard fry—the one that started it all. Despite the fact",
-                TitleImagePath = "~/images/pro_img4.jpg"
+                TitleImagePath = "/images/pro_img4.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -313,7 +313,7 @@ namespace Pizza.Domain
                 Name = "Belgian Fries",
                 Price = 10,
                 Subtitle = "Belgian fries might look like the typical fry experience, but they most",
-                TitleImagePath = "~/images/pro_img4.jpg"
+                TitleImagePath = "/images/pro_img4.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -321,7 +321,7 @@ namespace Pizza.Domain
                 Name = "Shoestring Fries",
                 Price = 10,
                 Subtitle = "Despite the fact that shoestring fries aren't quite as crunchy",
-                TitleImagePath = "~/images/pro_img4.jpg"
+                TitleImagePath = "/images/pro_img4.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -329,7 +329,7 @@ namespace Pizza.Domain
                 Name = "Curly Fries",
                 Price = 10,
                 Subtitle = "There's something so satisfying about curly fries. First of all",
-                TitleImagePath = "~/images/pro_img4.jpg"
+                TitleImagePath = "/images/pro_img4.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -337,7 +337,7 @@ namespace Pizza.Domain
                 Name = "Coca-Cola",
                 Price = 10,
                 Subtitle = "Coca-Cola is the most popular drink in the world",
-                TitleImagePath = "~/images/pro_img5.jpg"
+                TitleImagePath = "/images/pro_img5.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -345,7 +345,7 @@ namespace Pizza.Domain
                 Name = "Pepsi",
                 Price = 10,
                 Subtitle = "Pepsi is a cola drink type manufactured by PepsiCo",
-                TitleImagePath = "~/images/pro_img5.jpg"
+                TitleImagePath = "/images/pro_img5.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -353,7 +353,7 @@ namespace Pizza.Domain
                 Name = "Nestlé S.A",
                 Price = 10,
                 Subtitle = "Nestle is synonymous with instant coffee, bottled water, crunches",
-                TitleImagePath = "~/images/pro_img5.jpg"
+                TitleImagePath = "/images/pro_img5.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -361,7 +361,7 @@ namespace Pizza.Domain
                 Name = "Sprite",
                 Price = 10,
                 Subtitle = "Sprite is a colorless, lime-lemon flavored, non-caffeinated soft",
-                TitleImagePath = "~/images/pro_img5.jpg"
+                TitleImagePath = "/images/pro_img5.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
@@ -369,7 +369,7 @@ namespace Pizza.Domain
                 Name = "Mountain Dew",
                 Price = 10,
                 Subtitle = "This is yet another PepsiCo carbonated soft drink.It comes",
-                TitleImagePath = "~/images/pro_img5.jpg"
+                TitleImagePath = "/images/pro_img5.jpg"
             }); 
         }
     }
