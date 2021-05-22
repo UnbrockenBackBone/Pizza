@@ -13,6 +13,7 @@ namespace Pizza.Domain
     {
         public PizzaDbContext(DbContextOptions<PizzaDbContext> options) : base(options) { }
         public DbSet<Product> Products { get; set; }
+        public DbSet<UserProducts> UserProducts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

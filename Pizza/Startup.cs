@@ -35,6 +35,7 @@ namespace Pizza
 
             //подключаем нужный функционал приложения
             services.AddTransient<IProductsRepository, EFProductsRepository>();
+            services.AddTransient<IUserProductsRepository, EFUserProductsRepository>();
             services.AddTransient<DataManager>();
 
             //Подключаем контекст

@@ -67,7 +67,7 @@ namespace Pizza.Controllers
             ViewBag.Name = HttpContext.User.Identity.Name;
             if (ModelState.IsValid)
             {
-                IdentityUser user = new IdentityUser { UserName = model.UserName, Email = model.Email };
+                IdentityUser user = new() { UserName = model.UserName, Email = model.Email };
                 // добавляем пользователя
                 var result = await userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
