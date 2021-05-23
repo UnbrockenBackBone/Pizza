@@ -2,6 +2,8 @@
 @{ 
     ViewData["Title"] = "My Cart";
     string id = "quantity";
+    string pro_price = "pro_price";
+    string pro_total = "pro_total";
     int count = 1;
 }
 <!-- breadcum section -->
@@ -70,20 +72,19 @@
                                         </div>
                                         <div class="pro_qty">
                                             <div class="number-input">
-
-                                                <button onclick="stepup(@id+count)" class="plus"></button>
-                                                <input id="@id+count" class="quantity" min="0" name="quantity" value="1" type="number">
-                                                <button onclick="stepdown(@id+count)"></button>
-                                                @count++;
+                                                <button onclick="stepup('@id@count', '@pro_price@count', '@pro_total@count')" class="plus"></button>
+                                                <input id="@id@count" class="quantity" min="0" name="quantity" value="1" type="number">
+                                                <button onclick="stepdown('@id@count', '@pro_price@count', '@pro_total@count')"></button>
                                             </div>
                                         </div>
                                         <div class="pro_price">
-                                            <h4 id="pro_price">$@entity.Price</h4>
+                                            <h4 id="@pro_price@count">$@entity.Price</h4>
                                         </div>
                                         <div class="pro_total">
-                                            <h4>$@entity.Price</h4>
+                                            <h4 id="@pro_total@count">$@entity.Price</h4>
                                         </div>
                                     </li>
+                                    count++;
                                 }
                             }
                         </ul>
@@ -140,21 +141,23 @@
     </div>
 </section>
 <script>
-    function stepup(id) {
+    function stepup(id, price, total) {
         var value = Number(document.getElementById(id).value);
         if (value < 10) {
             value = value + 1;
             document.getElementById(id).value = value;
+            document.getElementById(total).innerHTML = "$" + (Number(document.getElementById(total).innerHTML.substr(1)) + Number(document.getElementById(price).innerHTML.substr(1)))
         }
         else
             document.getElementById(id).value = value;
 /*        total();*/
     }
-    function stepdown(id) {
+    function stepdown(id, price, total) {
         var value = Number(document.getElementById(id).value);
         if (value > 1) {
             value = value - 1;
             document.getElementById(id).value = value;
+            document.getElementById(total).innerHTML = "$" + (Number(document.getElementById(total).innerHTML.substr(1)) - Number(document.getElementById(price).innerHTML.substr(1)))
         }
         else
             document.getElementById(id).value = value;
