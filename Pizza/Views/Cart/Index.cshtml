@@ -5,6 +5,7 @@
     string pro_price = "pro_price";
     string pro_total = "pro_total";
     int count = 1;
+    int total = 0;
 }
 <!-- breadcum section -->
 <div class="breadcum">
@@ -84,6 +85,7 @@
                                             <h4 id="@pro_total@count">$@entity.Price</h4>
                                         </div>
                                     </li>
+                                    total += @entity.Price;
                                     count++;
                                 }
                             }
@@ -112,7 +114,7 @@
                         </div>
                         <div class="checkout">
                             <p class="order_dscr">Order with Delivery</p>
-                            <p class="order_total"><span>Total :</span> $156.00</p>
+                            <p class="order_total" id="order_total"><span>Total :</span> $@total</p>
                             <div class="btn_checkout">
                                 <a href="#" class="trans gray_btn hvr-ripple" title="Update Cart">Update Cart </a>
                                 <a href="checkout.html" class="trans red_btn squre-btn hvr-ripple-out" title="Proceed to Checkout">Proceed to Checkout</a>
@@ -146,27 +148,22 @@
         if (value < 10) {
             value = value + 1;
             document.getElementById(id).value = value;
-            document.getElementById(total).innerHTML = "$" + (Number(document.getElementById(total).innerHTML.substr(1)) + Number(document.getElementById(price).innerHTML.substr(1)))
+            document.getElementById(total).innerHTML = "$" + (Number(document.getElementById(total).innerHTML.substr(1)) + Number(document.getElementById(price).innerHTML.substr(1)));
+            document.getElementById("order_total").innerHTML = "<span>Total :</span> $" + (Number(document.getElementById("order_total").innerHTML.substr(22)) + Number(document.getElementById(price).innerHTML.substr(1)));
         }
         else
             document.getElementById(id).value = value;
-/*        total();*/
     }
     function stepdown(id, price, total) {
         var value = Number(document.getElementById(id).value);
         if (value > 1) {
             value = value - 1;
             document.getElementById(id).value = value;
-            document.getElementById(total).innerHTML = "$" + (Number(document.getElementById(total).innerHTML.substr(1)) - Number(document.getElementById(price).innerHTML.substr(1)))
+            document.getElementById(total).innerHTML = "$" + (Number(document.getElementById(total).innerHTML.substr(1)) - Number(document.getElementById(price).innerHTML.substr(1)));
+            document.getElementById("order_total").innerHTML = "<span>Total :</span> $" + (Number(document.getElementById("order_total").innerHTML.substr(22)) - Number(document.getElementById(price).innerHTML.substr(1)));
         }
         else
             document.getElementById(id).value = value;
-    }
-    function total() {
-        var quantity = document.getElementById("quantity");
-        var price = document.getElementById("pro_price");
-        var total = document.getElementById("pro_total");
-        total = quantity * price;
     }
 </script>
 <!-- Quick Order Section -->
