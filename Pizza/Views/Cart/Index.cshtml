@@ -1,6 +1,9 @@
 ﻿@model List<Product>
-@{ ViewData["Title"] = "My Cart"; }
-
+@{ 
+    ViewData["Title"] = "My Cart";
+    string id = "quantity";
+    int count = 1;
+}
 <!-- breadcum section -->
 <div class="breadcum">
     <div class="container">
@@ -68,14 +71,14 @@
                                         <div class="pro_qty">
                                             <div class="number-input">
 
-                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-                                                <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
-
+                                                <button onclick="stepup(@id+count)" class="plus"></button>
+                                                <input id="@id+count" class="quantity" min="0" name="quantity" value="1" type="number">
+                                                <button onclick="stepdown(@id+count)"></button>
+                                                @count++;
                                             </div>
                                         </div>
                                         <div class="pro_price">
-                                            <h4>$@entity.Price</h4>
+                                            <h4 id="pro_price">$@entity.Price</h4>
                                         </div>
                                         <div class="pro_total">
                                             <h4>$@entity.Price</h4>
@@ -136,4 +139,31 @@
         </div>
     </div>
 </section>
+<script>
+    function stepup(id) {
+        var value = Number(document.getElementById(id).value);
+        if (value < 10) {
+            value = value + 1;
+            document.getElementById(id).value = value;
+        }
+        else
+            document.getElementById(id).value = value;
+/*        total();*/
+    }
+    function stepdown(id) {
+        var value = Number(document.getElementById(id).value);
+        if (value > 1) {
+            value = value - 1;
+            document.getElementById(id).value = value;
+        }
+        else
+            document.getElementById(id).value = value;
+    }
+    function total() {
+        var quantity = document.getElementById("quantity");
+        var price = document.getElementById("pro_price");
+        var total = document.getElementById("pro_total");
+        total = quantity * price;
+    }
+</script>
 <!-- Quick Order Section -->
