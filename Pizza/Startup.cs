@@ -33,6 +33,15 @@ namespace Pizza
         {
             Configuration.Bind("Project", new Config());
 
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
             //подключаем нужный функционал приложения
             services.AddTransient<IProductsRepository, EFProductsRepository>();
             services.AddTransient<IUserProductsRepository, EFUserProductsRepository>();
@@ -89,6 +98,8 @@ namespace Pizza
             app.UseCookiePolicy();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
