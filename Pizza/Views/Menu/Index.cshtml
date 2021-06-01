@@ -1,12 +1,12 @@
 ﻿@model IQueryable<Product>
-@{ 
+@{
     ViewData["Title"] = "Pizza";
     List<Product> Pizza = new List<Product>();
     List<Product> Burgers = new List<Product>();
     List<Product> Salads = new List<Product>();
     List<Product> Fries = new List<Product>();
     List<Product> Drinks = new List<Product>();
-    foreach(Product entity in Model)
+    foreach (Product entity in Model)
     {
         if (entity.Category == "Pizza")
             Pizza.Add(entity);
@@ -116,7 +116,7 @@
                                                                     </div>
                                                                     <div class="price_block">
                                                                         <div class="price">$ @entity.Price</div>
-                                                                        <a asp-controller="Cart" asp-action="Add" asp-route-id="@entity.Id" class="card_btn">Add to cart</a>
+                                                                        <a asp-controller="Cart" asp-action="Add" onclick="addCart('@entity.Id', '@entity.Name', '@entity.Price', '@entity.Subtitle', '@entity.TitleImagePath')" class="card_btn">Add to cart</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -149,7 +149,7 @@
 
                                                                     <div class="price_block">
                                                                         <div class="price">$ @entity.Price</div>
-                                                                        <a asp-controller="Cart" asp-action="Add" asp-route-id="@entity.Id" class="card_btn">Add to cart</a>
+                                                                        <a asp-controller="Cart" asp-action="Add" onclick="addCart('@entity.Id', '@entity.Name', '@entity.Price', '@entity.Subtitle', '@entity.TitleImagePath')" class="card_btn">Add to cart</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -182,7 +182,7 @@
 
                                                                     <div class="price_block">
                                                                         <div class="price">$ @entity.Price</div>
-                                                                        <a asp-controller="Cart" asp-action="Add" asp-route-id="@entity.Id" class="card_btn">Add to cart</a>
+                                                                        <a asp-controller="Cart" asp-action="Add" onclick="addCart('@entity.Id', '@entity.Name', '@entity.Price', '@entity.Subtitle', '@entity.TitleImagePath')" class="card_btn">Add to cart</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -230,7 +230,7 @@
                                                                     </div>
                                                                     <div class="price_block">
                                                                         <div class="price">$ @entity.Price</div>
-                                                                        <a asp-controller="Cart" asp-action="Add" asp-route-id="@entity.Id" class="card_btn">Add to cart</a>
+                                                                        <a asp-controller="Cart" asp-action="Add" onclick="addCart('@entity.Id', '@entity.Name', '@entity.Price', '@entity.Subtitle', '@entity.TitleImagePath')" class="card_btn">Add to cart</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -262,7 +262,7 @@
                                                                     </p>
                                                                     <div class="price_block">
                                                                         <div class="price">$ @entity.Price</div>
-                                                                        <a asp-controller="Cart" asp-action="Add" asp-route-id="@entity.Id" class="card_btn">Add to cart</a>
+                                                                        <a asp-controller="Cart" asp-action="Add" onclick="addCart('@entity.Id', '@entity.Name', '@entity.Price', '@entity.Subtitle', '@entity.TitleImagePath')" class="card_btn">Add to cart</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -285,80 +285,40 @@
                                 </div>
                                 <div class="Order_number">
                                     <ul>
-                                        <li>
-                                            <div class="Order_number">
-                                                <div class="Order_names">
-                                                    <span class="O_name">1x Mexican Pizza</span>
-                                                    <span class="O_type">Extra Large</span>
-                                                </div>
-                                                <div class="Order_price">
-                                                    <span class="O_price">$12</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="Order_number">
-                                                <div class="Order_names">
-                                                    <span class="O_name">1x Mexican Pizza</span>
-                                                    <span class="O_type">Extra Large</span>
-                                                </div>
-                                                <div class="Order_price">
-                                                    <span class="O_price">$12</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="Order_number">
-                                                <div class="Order_names">
-                                                    <span class="O_name">1x Mexican Pizza</span>
-                                                    <span class="O_type">Extra Large</span>
-                                                </div>
-                                                <div class="Order_price">
-                                                    <span class="O_price">$12</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="Order_number">
-                                                <div class="Order_names">
-                                                    <span class="O_name">1x Mexican Pizza</span>
-                                                    <span class="O_type">Extra Large</span>
-                                                </div>
-                                                <div class="Order_price">
-                                                    <span class="O_price">$12</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="Order_number">
-                                                <div class="Order_names">
-                                                    <span class="O_name">1x Mexican Pizza</span>
-                                                    <span class="O_type">Extra Large</span>
-                                                </div>
-                                                <div class="Order_price">
-                                                    <span class="O_price">$12</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="Order_number">
-                                                <div class="Order_names">
-                                                    <span class="O_name">1x Mexican Pizza</span>
-                                                    <span class="O_type">Extra Large</span>
-                                                </div>
-                                                <div class="Order_price">
-                                                    <span class="O_price">$12</span>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        <script>
+                                            var total = 0;
+                                            if (localStorage.getItem('cartData') != null) {
+                                                let cartData = JSON.parse(localStorage.getItem('cartData'));
+                                                for (var i = 0; i < cartData.length; i++) {
+                                                    document.write(`<li>
+                                                                        <div class="Order_number">
+                                                                            <div class="Order_names">
+                                                                                <span class="O_name">${cartData[i].count}x ${cartData[i].name}</span>
+                                                                                <span class="O_type">Extra Large</span>
+                                                                            </div>
+                                                                            <div class="Order_price">
+                                                                                <span class="O_price">$${cartData[i].totalPrice}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>`);
+                                                    total += Number(cartData[i].totalPrice);
+                                                }
+                                            }
+                                        </script>
                                     </ul>
                                 </div>
                                 <div class="totle_Oamount">
                                     <div class="O_totlecost">
                                         <span class="O_title">Total</span>
-                                        <span class="O_price">$156</span>
+                                        <span class="O_price">$<script>document.write(total)</script></span>
                                     </div>
-                                    <a asp-controller="Menu" asp-action="Cart" class="trans red_btn squre-btn hvr-ripple-out" title="">Order Now</a>
+                                    <form asp-controller="Cart" asp-action="Сheckout" method="post">
+                                        <input id="check_id" style="display: none;" type="number" name="total" value="40" /><br />
+                                        <input type="submit" class="trans red_btn squre-btn hvr-ripple-out" value="Order Now" />
+                                    </form>
+                                    <script>
+                                        document.getElementById("check_id").value = Number(total);
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -384,4 +344,3 @@
         </div>
     </div>
 </section>
-<!-- Quick Order Section -->

@@ -5,4 +5,116 @@
 <!-- JS Here -->
 <script src="~/js/custome.js" defer></script>
 <script src="~/js/slick.js" defer></script>
-<!-- JS Here -->
+<!-- JS Local -->
+<script>
+    getCount();
+    function addCart(id, name, price, subtitle, image) {
+        if (localStorage.getItem('cartData') != null) {
+            let cartData = JSON.parse(localStorage.getItem('cartData'));
+            var isSearch = false;
+
+            for (var i = 0; i < cartData.length; i++) {
+                if (cartData[i].id == id) {
+                    cartData[i].count += 1;
+                    cartData[i].totalPrice = Number(cartData[i].totalPrice) + Number(cartData[i].price);
+                    isSearch = true;
+                    break;
+                }
+            }
+            if (!isSearch) {
+                cartData.push({ id: id, name: name, price: price, totalPrice: price, subtitle: subtitle, image: image, count: 1 });
+            }
+
+            var cartString = JSON.stringify(cartData);
+            localStorage.removeItem('cartData');
+            localStorage.setItem('cartData', cartString);
+        }
+        else {
+            let cartData = [
+                { id: id, name: name, price: price, totalPrice: price, subtitle: subtitle, image: image, count: 1 },
+            ];
+            var cartString = JSON.stringify(cartData);
+            localStorage.setItem('cartData', cartString);
+        }
+    }
+    function getCount() {
+        if (localStorage.getItem('cartData') != null) {
+            let cartData = JSON.parse(localStorage.getItem('cartData'));
+            var price = 0;
+            for (var i = 0; i < cartData.length; i++) {
+                price += Number(cartData[i].totalPrice);
+                document.getElementById('Cart_count').innerHTML = 'Cart : (' + cartData.length + ') $' + price + '.00';
+            }
+        }
+        else {
+            document.getElementById('Cart_count').innerHTML = 'Cart : (0) $00.00';
+        }
+    }
+    function stepup(prodId, id, pro_price, pro_total) {
+        var value = Number(document.getElementById(id).value);
+        if (value < 10) {
+            if (localStorage.getItem('cartData') != null) {
+                let cartData = JSON.parse(localStorage.getItem('cartData'));
+                for (var i = 0; i < cartData.length; i++) {
+                    if (cartData[i].id == prodId) {
+                        cartData[i].count = Number(cartData[i].count) + 1;
+                        cartData[i].totalPrice = Number(cartData[i].totalPrice) + Number(cartData[i].price);
+                        break;
+                    }
+                }
+                var cartString = JSON.stringify(cartData);
+                localStorage.removeItem('cartData');
+                localStorage.setItem('cartData', cartString);
+                getCount();
+            }
+
+            value = value + 1;
+            document.getElementById(id).value = value;
+            document.getElementById(pro_total).innerHTML = "$" + (Number(document.getElementById(pro_total).innerHTML.substr(1)) + Number(document.getElementById(pro_price).innerHTML.substr(1)));
+            var total = Number(document.getElementById("order_total").innerHTML.substr(22)) + Number(document.getElementById(pro_price).innerHTML.substr(1));
+            document.getElementById("order_total").innerHTML = "<span>Total :</span> $" + total;
+            document.getElementById("check_id").value = Number(total);
+        }
+    }
+    function stepdown(prodId, id, pro_price, pro_total) {
+        var value = Number(document.getElementById(id).value);
+        if (value > 1) {
+            if (localStorage.getItem('cartData') != null) {
+                let cartData = JSON.parse(localStorage.getItem('cartData'));
+                for (var i = 0; i < cartData.length; i++) {
+                    if (cartData[i].id == prodId) {
+                        cartData[i].count = Number(cartData[i].count) - 1;
+                        cartData[i].totalPrice = Number(cartData[i].totalPrice) - Number(cartData[i].price);
+                        break;
+                    }
+                }
+                var cartString = JSON.stringify(cartData);
+                localStorage.removeItem('cartData');
+                localStorage.setItem('cartData', cartString);
+                getCount();
+            }
+
+            value = value - 1;
+            document.getElementById(id).value = value;
+            document.getElementById(pro_total).innerHTML = "$" + (Number(document.getElementById(pro_total).innerHTML.substr(1)) - Number(document.getElementById(pro_price).innerHTML.substr(1)));
+            var total = Number(document.getElementById("order_total").innerHTML.substr(22)) - Number(document.getElementById(pro_price).innerHTML.substr(1));
+            document.getElementById("order_total").innerHTML = "<span>Total :</span> $" + total;
+            document.getElementById("check_id").value = Number(total);
+        }
+    }
+    function deleteItemCart(id) {
+        if (localStorage.getItem('cartData') != null) {
+            let cartData = JSON.parse(localStorage.getItem('cartData'));
+            for (var i = 0; i < cartData.length; i++) {
+                if (cartData[i].id == id) {
+                    cartData.splice(i);
+                    break;
+                }
+            }
+            var cartString = JSON.stringify(cartData);
+            localStorage.removeItem('cartData');
+            localStorage.setItem('cartData', cartString);
+            document.location.reload(true);
+        }
+    }
+</script>

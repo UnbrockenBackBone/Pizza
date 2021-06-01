@@ -1,11 +1,5 @@
-﻿@model List<Product>
-@{ 
+﻿@{
     ViewData["Title"] = "My Cart";
-    string id = "quantity";
-    string pro_price = "pro_price";
-    string pro_total = "pro_total";
-    int count = 1;
-    int total = 0;
 }
 <!-- breadcum section -->
 <div class="breadcum">
@@ -34,125 +28,99 @@
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <div class="cart_list">
-                        <ul class="inner_cartlist">
-                            <li class="header">
-                                <div class="main_head">
-                                    <div class="edit">&nbsp;</div>
-                                    <div class="pro_name">
-                                        <h4>Product</h4>
-                                    </div>
-                                    <div class="pro_qty">
-                                        <h4>Qty</h4>
-                                    </div>
-                                    <div class="pro_price">
-                                        <h4>Price</h4>
-                                    </div>
-                                    <div class="pro_total">
-                                        <h4>Total</h4>
-                                    </div>
-                                </div>
-                            </li>
-                            @if (Model != null && Model.Any() && Model[0] != null)
-                            {
-                                @foreach (Product entity in Model)
-                                {
-                                    <li class="rows">
-                                        <div class="edit">
-                                            <div class="edit_div"><a asp-controller="Cart" asp-action="Delete" asp-route-id="@entity.Id" class="trans del" title="Delete"><i class="fa fa-times" aria-hidden="true"></i></a><a href="#" class="trans edit_new" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
-                                        </div>
-                                        <div class="pro_name">
-                                            <div class="products">
-                                                <div class="pro_img"><img src="@entity.TitleImagePath.Replace("pizza", "cart")" class="absoImg" alt=""></div>
-                                                <div class="pro_descr">
-                                                    <h3 class="pro_title"><a href="#" title="Mexican Pizza" class="trans">@entity.Name</a></h3>
-                                                    <p class="pro_dtls">@entity.Subtitle</p>
-                                                    <p class="size"><span class="size">Size :</span>Medium</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="pro_qty">
-                                            <div class="number-input">
-                                                <button onclick="stepup('@id@count', '@pro_price@count', '@pro_total@count')" class="plus"></button>
-                                                <input id="@id@count" class="quantity" min="0" name="quantity" value="1" type="number">
-                                                <button onclick="stepdown('@id@count', '@pro_price@count', '@pro_total@count')"></button>
-                                            </div>
-                                        </div>
-                                        <div class="pro_price">
-                                            <h4 id="@pro_price@count">$@entity.Price</h4>
-                                        </div>
-                                        <div class="pro_total">
-                                            <h4 id="@pro_total@count">$@entity.Price</h4>
-                                        </div>
-                                    </li>
-                                    total += @entity.Price;
-                                    count++;
+                    <div id="itemsCart" class="cart_list">
+                        <script>
+                            document.write(`<ul class="inner_cartlist">
+                                                                        <li class="header">
+                                                                            <div class="main_head">
+                                                                                <div class="edit">&nbsp;</div>
+                                                                                <div class="pro_name">
+                                                                                    <h4>Product</h4>
+                                                                                </div>
+                                                                                <div class="pro_qty">
+                                                                                    <h4>Qty</h4>
+                                                                                </div>
+                                                                                <div class="pro_price">
+                                                                                    <h4>Price</h4>
+                                                                                </div>
+                                                                                <div class="pro_total">
+                                                                                    <h4>Total</h4>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>`);
+                            var total = 0;
+                            if (localStorage.getItem('cartData') != null) {
+                                let cartData = JSON.parse(localStorage.getItem('cartData'));
+                                for (var i = 0; i < cartData.length; i++) {
+                                    document.write(`<li class="rows">
+                                                                                <div class="edit">
+                                                                                    <div class="edit_div"><a onclick="deleteItemCart('${cartData[i].id}')" class="trans del" title="Delete"><i class="fa fa-times" aria-hidden="true"></i></a><a href="#" class="trans edit_new" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
+                                                                                </div>
+                                                                                <div class="pro_name">
+                                                                                    <div class="products">
+                                                                                        <div class="pro_img"><img src="${cartData[i].image.replaceAll("pizza", "cart")}" class="absoImg" alt=""></div>
+                                                                                        <div class="pro_descr">
+                                                                                            <h3 class="pro_title"><a href="#" title="Mexican Pizza" class="trans">${cartData[i].name}</a></h3>
+                                                                                            <p class="pro_dtls">${cartData[i].subtitle}</p>
+                                                                                            <p class="size"><span class="size">Size :</span>Medium</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="pro_qty">
+                                                                                    <div class="number-input">
+                                                                                        <button onclick="stepup('${cartData[i].id}', '${'quantity' + i}', '${'pro_price' + i}', '${'pro_total' + i}')" class="plus"></button>
+                                                                                        <input id="${'quantity' + i}" class="quantity" min="0" name="quantity" value="${cartData[i].count}" type="number">
+                                                                                        <button onclick="stepdown('${cartData[i].id}', '${'quantity' + i}', '${'pro_price' + i}', '${'pro_total' + i}')"></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="pro_price">
+                                                                                    <h4 id="${'pro_price' + i}">$${cartData[i].price}</h4>
+                                                                                </div>
+                                                                                <div class="pro_total">
+                                                                                    <h4 id="${'pro_total' + i}">$${cartData[i].totalPrice}</h4>
+                                                                                </div>
+                                                                            </li>`);
+                                    total += Number(cartData[i].totalPrice);
                                 }
                             }
-                        </ul>
-                        <div class="coupan_block">
-                            <form method="post" id="couponform">
-                                <div class="coupan_code">
-                                    <input type="text" name="Coupancode" class="form-control" placeholder="Coupon Code">
-                                    <button type="submit" class="coupon-btn send trans hvr-ripple-out" name="coupon">Apply Coupon</button>
-                                    <!-- <input type="submit" value="Apply Coupon" class="send trans"> -->
-                                </div>
-                            </form>
-                            <div class="Redio_diltype">
-                                <ul>
-                                    <li>
+                            document.write(`</ul>
+                                                                        <div class="coupan_block">
+                                                                            <form method="post" id="couponform">
+                                                                                <div class="coupan_code">
+                                                                                    <input type="text" name="Coupancode" class="form-control" placeholder="Coupon Code">
+                                                                                    <button type="submit" class="coupon-btn send trans hvr-ripple-out" name="coupon">Apply Coupon</button>
+                                                                                    <!-- <input type="submit" value="Apply Coupon" class="send trans"> -->
+                                                                                </div>
+                                                                            </form>
+                                                                            <div class="Redio_diltype">
+                                                                                <ul>
+                                                                                    <li>
 
-                                        <input type="radio" id="Delivery" name="deliver_type" value="male" checked>
-                                        <label for="Delivery">Delivery</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" id="takeaway" name="deliver_type" value="female">
-                                        <label for="takeaway">Take Away</label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                                                                                        <input type="radio" id="Delivery" name="deliver_type" value="male" checked>
+                                                                                        <label for="Delivery">Delivery</label>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <input type="radio" id="takeaway" name="deliver_type" value="female">
+                                                                                        <label for="takeaway">Take Away</label>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>`);
+                        </script>
                         <div class="checkout">
                             <p class="order_dscr">Order with Delivery</p>
-                            <p class="order_total" id="order_total"><span>Total :</span> $@total</p>
+                            <p class="order_total" id="order_total"><span>Total :</span> $${total}</p>
                             <div class="btn_checkout">
-                                <div id="smart-button-container">
-                                    <div style="text-align: center;">
-                                        <div id="paypal-button-container"></div>
-                                    </div>
-                                </div>
-                                <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
-                                <script>
-                                    function initPayPalButton() {
-                                        paypal.Buttons({
-                                            style: {
-                                                shape: 'pill',
-                                                color: 'gold',
-                                                layout: 'horizontal',
-                                                label: 'pay',
-
-                                            },
-
-                                            createOrder: function (data, actions) {
-                                                return actions.order.create({
-                                                    purchase_units: [{ "amount": { "currency_code": "USD", "value": getTotal() } }]
-                                                });
-                                            },
-
-                                            onApprove: function (data, actions) {
-                                                return actions.order.capture().then(function (details) {
-                                                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
-                                                });
-                                            },
-
-                                            onError: function (err) {
-                                                console.log(err);
-                                            }
-                                        }).render('#paypal-button-container');
-                                    }
-                                    initPayPalButton();
-                                </script>
+                                <form asp-controller="Cart" asp-action="Сheckout" method="post">
+                                    <input id="check_id" style="display: none;" type="number" name="total" value="40" /><br />
+                                    <input type="submit" class="trans red_btn squre-btn hvr-ripple-out" value="Proceed to Checkout" />
+                                </form>
                             </div>
+                        </div>
+                        <script>
+                            document.getElementById("order_total").innerHTML = "<span>Total :</span> $" + total;
+                            document.getElementById("check_id").value = Number(total);
+                        </script>
                     </div>
                 </div>
             </div>
@@ -175,31 +143,4 @@
         </div>
     </div>
 </section>
-<script>
-    function stepup(id, price, total) {
-        var value = Number(document.getElementById(id).value);
-        if (value < 10) {
-            value = value + 1;
-            document.getElementById(id).value = value;
-            document.getElementById(total).innerHTML = "$" + (Number(document.getElementById(total).innerHTML.substr(1)) + Number(document.getElementById(price).innerHTML.substr(1)));
-            document.getElementById("order_total").innerHTML = "<span>Total :</span> $" + (Number(document.getElementById("order_total").innerHTML.substr(22)) + Number(document.getElementById(price).innerHTML.substr(1)));
-        }
-        else
-            document.getElementById(id).value = value;
-    }
-    function stepdown(id, price, total) {
-        var value = Number(document.getElementById(id).value);
-        if (value > 1) {
-            value = value - 1;
-            document.getElementById(id).value = value;
-            document.getElementById(total).innerHTML = "$" + (Number(document.getElementById(total).innerHTML.substr(1)) - Number(document.getElementById(price).innerHTML.substr(1)));
-            document.getElementById("order_total").innerHTML = "<span>Total :</span> $" + (Number(document.getElementById("order_total").innerHTML.substr(22)) - Number(document.getElementById(price).innerHTML.substr(1)));
-        }
-        else
-            document.getElementById(id).value = value;
-    }
-    function getTotal() {
-        return Number(document.getElementById("order_total").innerHTML.substr(22));
-    }
-</script>
 <!-- Quick Order Section -->
