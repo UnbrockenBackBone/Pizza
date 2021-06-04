@@ -11,6 +11,7 @@ using Pizza.Domain;
 using Pizza.Domain.Entities;
 using Pizza.Domain.Repositories.Abstract;
 using Pizza.Domain.Repositories.EntityFramework;
+using Pizza.Models;
 using Pizza.Service;
 using System;
 using System.Collections.Generic;
@@ -61,6 +62,12 @@ namespace Pizza
                 options.Password.RequireDigit = false;
             }).AddEntityFrameworkStores<PizzaDbContext>().AddDefaultTokenProviders();
 
+            //настраиваем политику авторизации для Admin area
+            services.AddAuthorization(x =>
+            {
+                x.AddPolicy("AdminArea", policy => { policy.RequireRole("admin"); });
+            });
+
             //настраиваем cookie
             services.ConfigureApplicationCookie(options =>
             {
@@ -71,7 +78,10 @@ namespace Pizza
                 options.SlidingExpiration = true;
             });
 
-            services.AddControllersWithViews()
+            services.AddControllersWithViews(x =>
+            {
+                x.Conventions.Add(new AdminAreaAuthorization("Admin", "AdminArea"));
+            })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddSessionStateTempDataProvider();
         }
@@ -103,9 +113,11 @@ namespace Pizza
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("admin", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                //endpoints.MapControllerRoute(
+                //    name: "default",
+                //    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

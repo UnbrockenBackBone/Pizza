@@ -1,4 +1,5 @@
-﻿using Pizza.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Pizza.Domain.Entities;
 using Pizza.Domain.Repositories.Abstract;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,14 @@ namespace Pizza.Domain.Repositories.EntityFramework
         public Product GetProductsById(Guid id)
         {
             return context.Products.FirstOrDefault(x => x.Id == id);
+        }
+        public void SaveProduct(Product entity)
+        {
+            if (entity.Id == default)
+                context.Entry(entity).State = EntityState.Added;// объект будет добавлен как новый
+            else
+                context.Entry(entity).State = EntityState.Modified;// старый объект будет изменён
+            context.SaveChanges();
         }
     }
 }

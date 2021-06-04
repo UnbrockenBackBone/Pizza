@@ -1,0 +1,101 @@
+﻿@model ProductViewModel
+@{ ViewData["Title"] = "Create Product"; }
+
+<!-- breadcum section -->
+
+<div class="breadcum">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="main_breadcum">
+                    <ul>
+                        <li><a asp-controller="Home" asp-action="Index" class="trans" title="Home">Home</a></li>
+                        <li>Create</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- breadcum section -->
+<!-- Our login section -->
+<section id="login">
+    <div class="login_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main_login">
+                        <div class="login_left col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="login_box">
+                                <h2 class="title">Sign in</h2>
+                                <form asp-area="Admin" asp-controller="AddProduct" asp-action="Create" enctype="multipart/form-data">
+                                    <div class="login_form">
+                                        <ul>
+                                            <li>
+                                                <label asp-for="Category">Категория товара</label>
+                                                <select asp-for="Category" class="form-control">
+                                                    <option>Pizza</option>
+                                                    <option>Burgers</option>
+                                                    <option>Salads</option>
+                                                    <option>Fries</option>
+                                                    <option>Drinks</option>
+                                                </select>
+                                                <span asp-validation-for="Category"></span>
+                                            </li>
+                                            <li>
+                                                <label asp-for="Name">Название товара</label>
+                                                <input asp-for="Name" class="form-control" type="text">
+                                                <span asp-validation-for="Name"></span>
+                                            </li>
+                                            <li>
+                                                <label asp-for="Price">Цена товара</label>
+                                                <input asp-for="Price" class="form-control" type="number">
+                                                <span asp-validation-for="Price"></span>
+                                            </li>
+                                            <li>
+                                                <label asp-for="Subtitle">Описание товара</label>
+                                                <textarea asp-for="Subtitle" class="form-control"></textarea>
+                                                <span asp-validation-for="Subtitle"></span>
+                                            </li>
+                                            <li>
+                                                <label asp-for="uploads">Обложка товара для меню</label>
+                                                <input asp-for="uploads" class="form-control" type="file">
+                                                <span asp-validation-for="uploads"></span>
+                                            </li>
+                                            <li>
+                                                <label asp-for="uploads">Обложка товара для корзины</label>
+                                                <input asp-for="uploads" class="form-control" type="file">
+                                                <span asp-validation-for="uploads"></span>
+                                            </li>
+                                            <li>
+                                                <button type="submit" class="loginbutton red_btn trans squre-btn hvr-ripple-out" name="Login">Create</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Our login section -->
+<!-- Quick Order Section -->
+<section>
+    <div class="quick_order">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main_quickorder">
+                        <h3 class="title">Call Us for Quick Order</h3>
+                        <div class="cntct typewriter-effect"><span class="call_desk"><a href="tel:+01234567890" id="typewriter_num"></a></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Quick Order Section -->

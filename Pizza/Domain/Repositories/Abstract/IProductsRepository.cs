@@ -11,5 +11,6 @@ namespace Pizza.Domain.Repositories.Abstract
         IQueryable<Product> GetProducts();
         Product GetProductsById(Guid id);
         Product GetProductsByCategoryName(string category);
+        void SaveProduct(Product entity);
     }
 }
