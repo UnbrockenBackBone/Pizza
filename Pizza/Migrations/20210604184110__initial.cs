@@ -63,6 +63,19 @@ namespace Pizza.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserProducts",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IdUser = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IdProduct = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserProducts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -171,64 +184,64 @@ namespace Pizza.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "44546e06-8719-4ad8-b88a-f271ae9d6eab", "d2e76dee-545a-4734-96c7-4ca966b5806d", "admin", "ADMIN" });
+                values: new object[] { "44546e06-8719-4ad8-b88a-f271ae9d6eab", "383a6bc3-58ca-483e-9b3e-c4bc7019a29a", "admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3b62472e-4f66-49fa-a20f-e7685b9565d8", 0, "434ad436-e884-4322-a43e-929dd39cde4a", null, true, false, null, "admin@admin.com", "ADMIN", "AQAAAAEAACcQAAAAEAx2VJ2emr+CFFF3jFTr875Zj78giUPLjuQ5LMIvPDV8Ia48UBvXLr13/Evy2uydeg==", null, false, "", false, "admin" });
+                values: new object[] { "3b62472e-4f66-49fa-a20f-e7685b9565d8", 0, "f26d8449-cb04-44c8-aed4-2644b0351bee", null, true, false, null, "admin@admin.com", "ADMIN", "AQAAAAEAACcQAAAAEIiPEFAYcZYPR1vLRqWC35hqhJGIZywiU5sDj2de/pjZhTlPBVq3TPOWq4T1UDKZSQ==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Category", "Name", "Price", "Subtitle", "TitleImagePath" },
                 values: new object[,]
                 {
-                    { new Guid("870641f1-e1c0-48a7-b2cf-4f411f2dde71"), "Salads", "Gado-gado", 10, "Gado-gado literally means \"mix - mix.\" It's an Indonesian", "/images/Salad.jpg" },
-                    { new Guid("1143d521-1a53-457b-a0d5-882ec67d2dfa"), "Salads", "Larb", 10, "It's usually served with raw vegetables and sticky rice. vegetables", "/images/pro_img3.jpg" },
-                    { new Guid("056e0bfc-3c6b-4c52-be4c-d1ed78c1f6a3"), "Salads", "Cobb salad", 10, "The only way to make this dish heavier is to add bricks.", "/images/pro_img3.jpg" },
-                    { new Guid("73c0d289-4aa8-4400-b77a-1334eadc1e4d"), "Salads", "Gado-gado", 10, "Gado-gado literally means \"mix - mix.\" It's an Indonesian", "/images/Salad.jpg" },
-                    { new Guid("30438fe3-171d-46cc-b253-f6c50ce9867d"), "Salads", "Larb", 10, "It's usually served with raw vegetables and sticky rice. vegetables", "/images/pro_img3.jpg" },
-                    { new Guid("ef636bd2-1f52-4b5e-bd52-d5d4f7d2a1fb"), "Fries", "Potato Wedges", 10, "Potato wedges sit at the very bottom of the french fry totem pole", "/images/pro_img4.jpg" },
-                    { new Guid("1f3ecd85-108d-4170-a0b1-4686f2ac0c65"), "Fries", "Waffle Fries", 10, "Waffle fries have the exact opposite problem of the potato wedges", "/images/Fries.jpg" },
-                    { new Guid("f6c190fe-c966-4a1b-986d-35d5705de5eb"), "Fries", "Sweet Potato Fries", 10, "We don't hate sweet potato fries, but we certainly don't love them", "/images/pro_img4.jpg" },
-                    { new Guid("99462512-e31e-4aa4-9e8f-e88b93b735d8"), "Fries", "Crinkle Cut Fries", 10, "Crinkle cut fries just look like a good time. They're thick and heavy", "/images/pro_img4.jpg" },
-                    { new Guid("581e1a78-7371-49ce-ac78-27fa8484476f"), "Fries", "Steak Fries", 10, "Steak fries might seem like the less fun-looking version of crinkle cut fries", "/images/pro_img4.jpg" },
-                    { new Guid("f91b9a53-5faf-4e5e-810b-1bbc465e6a30"), "Fries", "Standard Fries", 10, "Ah, the standard fry—the one that started it all. Despite the fact", "/images/pro_img4.jpg" },
-                    { new Guid("f4e2e1b8-19c2-4ffe-befd-6535db38020a"), "Fries", "Belgian Fries", 10, "Belgian fries might look like the typical fry experience, but they most", "/images/pro_img4.jpg" },
-                    { new Guid("c65a72d0-3dc2-425c-90ca-f97867b459d5"), "Fries", "Shoestring Fries", 10, "Despite the fact that shoestring fries aren't quite as crunchy", "/images/pro_img4.jpg" },
-                    { new Guid("25073ff0-2ae5-43c2-ab45-45399639f550"), "Fries", "Curly Fries", 10, "There's something so satisfying about curly fries. First of all", "/images/pro_img4.jpg" },
-                    { new Guid("bea828ff-7b58-4119-b877-5602a9944f7a"), "Drinks", "Coca-Cola", 10, "Coca-Cola is the most popular drink in the world", "/images/pro_img5.jpg" },
-                    { new Guid("d0ee61e4-866f-4d10-a25d-ea329db0140c"), "Drinks", "Pepsi", 10, "Pepsi is a cola drink type manufactured by PepsiCo", "/images/pro_img5.jpg" },
-                    { new Guid("fecf5c79-d1f1-4e0f-b2aa-6bf5e63e1217"), "Drinks", "Nestlé S.A", 10, "Nestle is synonymous with instant coffee, bottled water, crunches", "/images/pro_img5.jpg" },
-                    { new Guid("b7356081-2022-4755-9388-dfcd8909b8a9"), "Salads", "Waldorf salad", 10, "Unlike the many folk salads featured here, Waldorf salad", "/images/pro_img3.jpg" },
-                    { new Guid("e8750912-a5a1-4934-9060-de4ace641ae7"), "Salads", "Cobb salad", 10, "The only way to make this dish heavier is to add bricks", "/images/pro_img3.jpg" },
-                    { new Guid("fc3e2232-9d9b-4978-93d7-37afa7c37cea"), "Salads", "Larb", 10, "It's usually served with raw vegetables and sticky rice. vegetables", "/images/pro_img3.jpg" },
-                    { new Guid("e48a69f8-e6bc-47cd-8fb5-5e65b9c3e1f6"), "Salads", "Cobb salad", 10, "The only way to make this dish heavier is to add bricks", "/images/pro_img3.jpg" },
-                    { new Guid("4a68aada-dffa-45db-9485-62709253fd05"), "Pizza", "Deluxe", 10, "original & favorite specialty pizza topped", "/images/pizza_img2.jpg" },
-                    { new Guid("92f703c2-5815-4d07-8d04-54175ae10d06"), "Pizza", "Veggie", 10, "Veggie lovers rejoice! Pizza topped with mushrooms", "/images/pizza_img2.jpg" },
-                    { new Guid("78613b8f-0948-4b7f-abe7-9088b37c9ae7"), "Pizza", "All Meat", 10, "Our famous meat pizza is topped", "/images/pizza_img3.jpg" },
-                    { new Guid("137529e6-2091-4442-8eee-2d4edf12d4b4"), "Pizza", "Barbecue Chicken", 10, "Tangy, rich, our homemade BBQ Chicken pizza", "/images/pizza_img4.jpg" },
-                    { new Guid("091178ba-62c9-4c1f-bb60-a3031b4b7448"), "Pizza", "Egg-ceptional", 10, "Enjoy breakfast anytime of the day! Our breakfast pizza", "/images/pizza_img4.jpg" },
-                    { new Guid("ddcc2452-fdf6-447b-b2be-36de12825857"), "Pizza", "lunch Special Pizza", 10, "one-topping pizza and a16 ounce drink Specialties", "/images/pizza_img5.png" },
-                    { new Guid("f091a9ab-7ad5-48fe-8512-c314ebac05d3"), "Pizza", "Buffalo Chicken", 10, "Pizza with Chicken, Hot Sauce, Ranch Dressing", "/images/pizza_img6.jpg" },
-                    { new Guid("90bc6d8f-d234-49ce-8929-ae64ca63f033"), "Pizza", "Tuscan Roma", 10, "Pizza with Roma Tomatoes, Spinach, Alfredo Sauce", "/images/pizza_img1.jpg" },
-                    { new Guid("cd8b677e-5b44-4b81-a391-88d38b298ac0"), "Drinks", "Sprite", 10, "Sprite is a colorless, lime-lemon flavored, non-caffeinated soft", "/images/pro_img5.jpg" },
-                    { new Guid("55f2b081-622c-4960-bd23-ab31411b64ef"), "Pizza", "Mac & Cheese", 10, "Pizza with Macaroni and Cheese", "/images/pizza_img2.jpg" },
-                    { new Guid("00775c10-b5f3-4009-aa85-7261330c6aed"), "Burgers", "Le Pigeon Burger", 10, "Le Pigeon Burger has smoky flavor enhanced with each topping", "/images/pro_img2.jpg" },
-                    { new Guid("19a0d40f-c79e-474b-bf8e-117832d60b13"), "Burgers", "Taco Burger", 12, "Tacos are amazing, no doubt about it; need this amazing combo", "/images/pro_img2.jpg" },
-                    { new Guid("6b352896-71a5-4b12-bd7d-9d79c2fb0c40"), "Burgers", "Chicken Burger", 15, "The Chicken Caesar Burger is special because it retains the freshness of chicken", "/images/Burgers.jpg" },
-                    { new Guid("016555a8-31ca-4230-8698-1d78f0638eef"), "Burgers", "Cheese Burger", 10, "Easily the best burger in all of Germany, this enormous preparation", "/images/Burgers.jpg" },
-                    { new Guid("e9d0ec93-d4ce-4810-aaaa-47793464425b"), "Burgers", "Chicken Burger", 15, "The Chicken Caesar Burger is special because it retains the freshness of chicken", "/images/Burgers.jpg" },
-                    { new Guid("9fc42768-221a-4d21-bf0b-565b4dc19bd5"), "Burgers", "Luger Burger", 10, "Luger Burger features extra thick bacon and more half pound of beef.", "/images/pro_img2.jpg" },
-                    { new Guid("94344499-7fd4-4d0d-80e4-830091eb0ef7"), "Burgers", "Le Pigeon Burger", 10, "Le Pigeon Burger has smoky flavor enhanced with each topping", "/images/pro_img2.jpg" },
-                    { new Guid("bad6879d-b5a6-42de-a5b0-d6be1c1d6716"), "Burgers", "Taco Burger", 12, "Tacos are amazing, no doubt about it; need this amazing combo", "/images/pro_img2.jpg" },
-                    { new Guid("a470dac9-db4a-4aaf-8961-441c78854f31"), "Burgers", "Luger Burger", 10, "Luger Burger features extra thick bacon and more half pound of beef.", "/images/pro_img2.jpg" }
+                    { new Guid("0dde069a-4ba3-4c7b-914d-03668e7b7b89"), "Salads", "Gado-gado", 10, "Gado-gado literally means \"mix - mix.\" It's an Indonesian", "/images/menu_img10.jpg" },
+                    { new Guid("33248fc6-04a4-46ac-8a01-b40a09472fe4"), "Salads", "Larb", 10, "It's usually served with raw vegetables and sticky rice. vegetables", "/images/menu_img9.jpg" },
+                    { new Guid("98e0c4fc-9f7a-4265-8d33-727592425e84"), "Salads", "Cobb salad", 10, "The only way to make this dish heavier is to add bricks.", "/images/menu_img9.jpg" },
+                    { new Guid("9de1240b-7eba-44fa-8d8f-60bfec5b906c"), "Salads", "Gado-gado", 10, "Gado-gado literally means \"mix - mix.\" It's an Indonesian", "/images/menu_img10.jpg" },
+                    { new Guid("f9a397ad-d4df-46b7-b12d-d406e5a52a43"), "Salads", "Larb", 10, "It's usually served with raw vegetables and sticky rice. vegetables", "/images/menu_img9.jpg" },
+                    { new Guid("7a0ad07c-64d7-45c2-a9d7-b1a86fb11f30"), "Fries", "Potato Wedges", 10, "Potato wedges sit at the very bottom of the french fry totem pole", "/images/menu_img11.jpg" },
+                    { new Guid("a8832bfa-82fb-4752-bab2-9fc27d22ea3e"), "Fries", "Waffle Fries", 10, "Waffle fries have the exact opposite problem of the potato wedges", "/images/menu_img12.jpg" },
+                    { new Guid("1f4a9d89-40f6-4177-a5d2-ad19364b23b3"), "Fries", "Sweet Potato Fries", 10, "We don't hate sweet potato fries, but we certainly don't love them", "/images/menu_img11.jpg" },
+                    { new Guid("72956b97-93f8-409e-a204-f19f5d0034cd"), "Fries", "Crinkle Cut Fries", 10, "Crinkle cut fries just look like a good time. They're thick and heavy", "/images/menu_img11.jpg" },
+                    { new Guid("ee0d0faa-53f0-47a9-a1be-487e8755c4e6"), "Fries", "Steak Fries", 10, "Steak fries might seem like the less fun-looking version of crinkle cut fries", "/images/menu_img11.jpg" },
+                    { new Guid("a80eff89-2daf-47f0-853f-94fdba61e51b"), "Fries", "Standard Fries", 10, "Ah, the standard fry—the one that started it all. Despite the fact", "/images/menu_img11.jpg" },
+                    { new Guid("e9409007-385d-434c-a313-26d9217a70b2"), "Fries", "Belgian Fries", 10, "Belgian fries might look like the typical fry experience, but they most", "/images/menu_img11.jpg" },
+                    { new Guid("670d0f4c-a176-4412-bcc0-a9a231ec6203"), "Fries", "Shoestring Fries", 10, "Despite the fact that shoestring fries aren't quite as crunchy", "/images/menu_img11.jpg" },
+                    { new Guid("27a062ab-9b65-4516-b481-c3c4f40b3dff"), "Fries", "Curly Fries", 10, "There's something so satisfying about curly fries. First of all", "/images/menu_img11.jpg" },
+                    { new Guid("81fb2f70-c1d6-4195-b532-6f6c5abfd6b7"), "Drinks", "Coca-Cola", 10, "Coca-Cola is the most popular drink in the world", "/images/menu_img13.jpg" },
+                    { new Guid("a0b62a26-3edd-4359-a252-f8c103c5821b"), "Drinks", "Pepsi", 10, "Pepsi is a cola drink type manufactured by PepsiCo", "/images/menu_img13.jpg" },
+                    { new Guid("8b27c78f-4cf3-468d-85c0-a2f0d3a1fe88"), "Drinks", "Nestlé S.A", 10, "Nestle is synonymous with instant coffee, bottled water, crunches", "/images/menu_img13.jpg" },
+                    { new Guid("a34c12bd-b280-43f4-9fad-f83a182ba28c"), "Salads", "Waldorf salad", 10, "Unlike the many folk salads featured here, Waldorf salad", "/images/menu_img9.jpg" },
+                    { new Guid("f6fba579-fc77-4481-bb38-424a77138d44"), "Salads", "Cobb salad", 10, "The only way to make this dish heavier is to add bricks", "/images/menu_img9.jpg" },
+                    { new Guid("5f13eb80-c103-4024-b5f4-6fafad51f227"), "Salads", "Larb", 10, "It's usually served with raw vegetables and sticky rice. vegetables", "/images/menu_img9.jpg" },
+                    { new Guid("df11381a-7eb5-44dc-b9a1-56697f166dee"), "Salads", "Cobb salad", 10, "The only way to make this dish heavier is to add bricks", "/images/menu_img9.jpg" },
+                    { new Guid("a0de496d-af91-4140-af3e-581569bdff40"), "Pizza", "Deluxe", 10, "original & favorite specialty pizza topped", "/images/menu_img2.jpg" },
+                    { new Guid("914470fa-5a09-47d9-b798-3aa4f66dba68"), "Pizza", "Veggie", 10, "Veggie lovers rejoice! Pizza topped with mushrooms", "/images/menu_img2.jpg" },
+                    { new Guid("9f06ddce-1209-4f09-8aa3-d9a935a22be0"), "Pizza", "All Meat", 10, "Our famous meat pizza is topped", "/images/menu_img3.jpg" },
+                    { new Guid("5891b6e0-6238-4297-97b0-10235b25701e"), "Pizza", "Barbecue Chicken", 10, "Tangy, rich, our homemade BBQ Chicken pizza", "/images/menu_img4.jpg" },
+                    { new Guid("b291720f-b2c4-4fe2-9443-24460254c8f4"), "Pizza", "Egg-ceptional", 10, "Enjoy breakfast anytime of the day! Our breakfast pizza", "/images/menu_img4.jpg" },
+                    { new Guid("d4111874-b133-4d64-b5cd-8b6430c31cf6"), "Pizza", "lunch Special Pizza", 10, "one-topping pizza and a16 ounce drink Specialties", "/images/menu_img5.png" },
+                    { new Guid("fda8b20f-30f4-47e1-b204-e005798787d6"), "Pizza", "Buffalo Chicken", 10, "Pizza with Chicken, Hot Sauce, Ranch Dressing", "/images/menu_img6.jpg" },
+                    { new Guid("74293f82-5465-49f1-a8c5-a3e25a6ba547"), "Pizza", "Tuscan Roma", 10, "Pizza with Roma Tomatoes, Spinach, Alfredo Sauce", "/images/menu_img1.jpg" },
+                    { new Guid("5ced3c03-21d1-4b42-8ff1-4633e81bd8e4"), "Drinks", "Sprite", 10, "Sprite is a colorless, lime-lemon flavored, non-caffeinated soft", "/images/menu_img13.jpg" },
+                    { new Guid("6c879ead-53e0-4488-bca8-55a6f73282a8"), "Pizza", "Mac & Cheese", 10, "Pizza with Macaroni and Cheese", "/images/menu_img2.jpg" },
+                    { new Guid("a5b13fd5-a803-41c4-8894-cab8f5a7ee92"), "Burgers", "Le Pigeon Burger", 10, "Le Pigeon Burger has smoky flavor enhanced with each topping", "/images/menu_img7.jpg" },
+                    { new Guid("383d5757-211d-487d-a060-3fa15678938a"), "Burgers", "Taco Burger", 12, "Tacos are amazing, no doubt about it; need this amazing combo", "/images/menu_img7.jpg" },
+                    { new Guid("76889a81-1608-46a2-a485-8825082477c6"), "Burgers", "Chicken Burger", 15, "The Chicken Caesar Burger is special because it retains the freshness of chicken", "/images/menu_img8.jpg" },
+                    { new Guid("9d0b20e4-29c0-4081-b050-6941086a0101"), "Burgers", "Cheese Burger", 10, "Easily the best burger in all of Germany, this enormous preparation", "/images/menu_img8.jpg" },
+                    { new Guid("3a7de201-260e-4217-aaca-26d70d22f7ba"), "Burgers", "Chicken Burger", 15, "The Chicken Caesar Burger is special because it retains the freshness of chicken", "/images/menu_img8.jpg" },
+                    { new Guid("eb09274e-9fbf-45cd-a352-a082c6b9f1be"), "Burgers", "Luger Burger", 10, "Luger Burger features extra thick bacon and more half pound of beef.", "/images/menu_img7.jpg" },
+                    { new Guid("70cf1a6e-efec-4bd3-a8a9-7d15a4bc2ab9"), "Burgers", "Le Pigeon Burger", 10, "Le Pigeon Burger has smoky flavor enhanced with each topping", "/images/menu_img7.jpg" },
+                    { new Guid("f37c123b-6151-4a2a-8740-a67bfbc3af62"), "Burgers", "Taco Burger", 12, "Tacos are amazing, no doubt about it; need this amazing combo", "/images/menu_img7.jpg" },
+                    { new Guid("0f69050e-4c45-4e7d-9e2c-2d417060edc2"), "Burgers", "Luger Burger", 10, "Luger Burger features extra thick bacon and more half pound of beef.", "/images/menu_img7.jpg" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "Category", "Name", "Price", "Subtitle", "TitleImagePath" },
-                values: new object[] { new Guid("337731d7-8549-490b-a96e-9ee02f6abd08"), "Drinks", "Mountain Dew", 10, "This is yet another PepsiCo carbonated soft drink.It comes", "/images/pro_img5.jpg" });
+                values: new object[] { new Guid("10c9b634-0c96-43f6-a341-cbff437f0523"), "Drinks", "Mountain Dew", 10, "This is yet another PepsiCo carbonated soft drink.It comes", "/images/menu_img13.jpg" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
@@ -294,6 +307,9 @@ namespace Pizza.Migrations
 
             migrationBuilder.DropTable(
                 name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "UserProducts");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

@@ -49,7 +49,7 @@ namespace Pizza.Migrations
                         new
                         {
                             Id = "44546e06-8719-4ad8-b88a-f271ae9d6eab",
-                            ConcurrencyStamp = "2de17d2c-fb4e-418b-a35a-98a84317ee70",
+                            ConcurrencyStamp = "383a6bc3-58ca-483e-9b3e-c4bc7019a29a",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -148,12 +148,12 @@ namespace Pizza.Migrations
                         {
                             Id = "3b62472e-4f66-49fa-a20f-e7685b9565d8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6ca92e0b-7680-42e3-94df-fc7cc4d43287",
+                            ConcurrencyStamp = "f26d8449-cb04-44c8-aed4-2644b0351bee",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@admin.com",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFozgXxJjDNck0+uplKe0tK/4KiKQeD9OcAAl4y9MOK8RjQC7FRLVOyPkKHKQAezxw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIiPEFAYcZYPR1vLRqWC35hqhJGIZywiU5sDj2de/pjZhTlPBVq3TPOWq4T1UDKZSQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -276,7 +276,7 @@ namespace Pizza.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d4cef170-e316-4680-abf0-c770a463576d"),
+                            Id = new Guid("a0de496d-af91-4140-af3e-581569bdff40"),
                             Category = "Pizza",
                             Name = "Deluxe",
                             Price = 10,
@@ -285,7 +285,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bac40a28-cee8-4c9d-8470-df1fcc405413"),
+                            Id = new Guid("914470fa-5a09-47d9-b798-3aa4f66dba68"),
                             Category = "Pizza",
                             Name = "Veggie",
                             Price = 10,
@@ -294,7 +294,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bb8d8eb9-6767-4b9f-802c-e8e1cd36ddf6"),
+                            Id = new Guid("9f06ddce-1209-4f09-8aa3-d9a935a22be0"),
                             Category = "Pizza",
                             Name = "All Meat",
                             Price = 10,
@@ -303,7 +303,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("40c14aaf-a2f0-45ad-ad1a-d91cded1ecca"),
+                            Id = new Guid("5891b6e0-6238-4297-97b0-10235b25701e"),
                             Category = "Pizza",
                             Name = "Barbecue Chicken",
                             Price = 10,
@@ -312,7 +312,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7a277aba-ab9c-422d-9287-4c48dd652b8e"),
+                            Id = new Guid("b291720f-b2c4-4fe2-9443-24460254c8f4"),
                             Category = "Pizza",
                             Name = "Egg-ceptional",
                             Price = 10,
@@ -321,7 +321,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c9ec8060-f07f-4ed8-a6db-5b3c82b8c5bf"),
+                            Id = new Guid("d4111874-b133-4d64-b5cd-8b6430c31cf6"),
                             Category = "Pizza",
                             Name = "lunch Special Pizza",
                             Price = 10,
@@ -330,7 +330,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e4f611ec-2fed-4a44-b4b6-ee83dada45d4"),
+                            Id = new Guid("fda8b20f-30f4-47e1-b204-e005798787d6"),
                             Category = "Pizza",
                             Name = "Buffalo Chicken",
                             Price = 10,
@@ -339,7 +339,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("eecf6c72-4c45-42fc-aec0-81b760740f25"),
+                            Id = new Guid("74293f82-5465-49f1-a8c5-a3e25a6ba547"),
                             Category = "Pizza",
                             Name = "Tuscan Roma",
                             Price = 10,
@@ -348,7 +348,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("13974d87-1c4b-4845-a05a-ee0047be589b"),
+                            Id = new Guid("6c879ead-53e0-4488-bca8-55a6f73282a8"),
                             Category = "Pizza",
                             Name = "Mac & Cheese",
                             Price = 10,
@@ -357,7 +357,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("50104d11-9d70-49d0-8ff7-85ee032036ff"),
+                            Id = new Guid("0f69050e-4c45-4e7d-9e2c-2d417060edc2"),
                             Category = "Burgers",
                             Name = "Luger Burger",
                             Price = 10,
@@ -366,7 +366,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0838527a-b5cc-4b4a-9557-7b90b64b58ef"),
+                            Id = new Guid("a5b13fd5-a803-41c4-8894-cab8f5a7ee92"),
                             Category = "Burgers",
                             Name = "Le Pigeon Burger",
                             Price = 10,
@@ -375,7 +375,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c10bc04e-8037-426d-992b-faa00fa6c13d"),
+                            Id = new Guid("383d5757-211d-487d-a060-3fa15678938a"),
                             Category = "Burgers",
                             Name = "Taco Burger",
                             Price = 12,
@@ -384,7 +384,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5c418ab0-b08e-448f-ae53-049b03d59efc"),
+                            Id = new Guid("76889a81-1608-46a2-a485-8825082477c6"),
                             Category = "Burgers",
                             Name = "Chicken Burger",
                             Price = 15,
@@ -393,7 +393,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1a29e97b-1a93-448c-94ed-24c6a06d1ded"),
+                            Id = new Guid("9d0b20e4-29c0-4081-b050-6941086a0101"),
                             Category = "Burgers",
                             Name = "Cheese Burger",
                             Price = 10,
@@ -402,7 +402,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7dfe916a-9172-48c4-b012-055ff6994040"),
+                            Id = new Guid("3a7de201-260e-4217-aaca-26d70d22f7ba"),
                             Category = "Burgers",
                             Name = "Chicken Burger",
                             Price = 15,
@@ -411,7 +411,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9e4c0c19-a865-4b41-aa97-cde3dab6f334"),
+                            Id = new Guid("eb09274e-9fbf-45cd-a352-a082c6b9f1be"),
                             Category = "Burgers",
                             Name = "Luger Burger",
                             Price = 10,
@@ -420,7 +420,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6435f3b0-7335-49e6-9495-9b8ef317ec83"),
+                            Id = new Guid("70cf1a6e-efec-4bd3-a8a9-7d15a4bc2ab9"),
                             Category = "Burgers",
                             Name = "Le Pigeon Burger",
                             Price = 10,
@@ -429,7 +429,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9a439fe9-fc86-4ede-a293-65943565493b"),
+                            Id = new Guid("f37c123b-6151-4a2a-8740-a67bfbc3af62"),
                             Category = "Burgers",
                             Name = "Taco Burger",
                             Price = 12,
@@ -438,7 +438,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("25b55a9c-8186-469a-b455-355567cbb342"),
+                            Id = new Guid("df11381a-7eb5-44dc-b9a1-56697f166dee"),
                             Category = "Salads",
                             Name = "Cobb salad",
                             Price = 10,
@@ -447,7 +447,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f925a57e-4a90-4b47-87cd-1572675aebe6"),
+                            Id = new Guid("5f13eb80-c103-4024-b5f4-6fafad51f227"),
                             Category = "Salads",
                             Name = "Larb",
                             Price = 10,
@@ -456,7 +456,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1bae4656-8404-485c-b980-2bf757c927d0"),
+                            Id = new Guid("f6fba579-fc77-4481-bb38-424a77138d44"),
                             Category = "Salads",
                             Name = "Cobb salad",
                             Price = 10,
@@ -465,7 +465,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6f91bfb1-d78f-449f-a5bd-3f56fa1dad5a"),
+                            Id = new Guid("a34c12bd-b280-43f4-9fad-f83a182ba28c"),
                             Category = "Salads",
                             Name = "Waldorf salad",
                             Price = 10,
@@ -474,7 +474,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("56af39e9-b374-4682-a31a-eef893ca59a6"),
+                            Id = new Guid("0dde069a-4ba3-4c7b-914d-03668e7b7b89"),
                             Category = "Salads",
                             Name = "Gado-gado",
                             Price = 10,
@@ -483,7 +483,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1bbbfccb-4b40-4c45-85a6-7b88537baf21"),
+                            Id = new Guid("33248fc6-04a4-46ac-8a01-b40a09472fe4"),
                             Category = "Salads",
                             Name = "Larb",
                             Price = 10,
@@ -492,7 +492,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5580c307-940a-42ce-801b-a910d0545c08"),
+                            Id = new Guid("98e0c4fc-9f7a-4265-8d33-727592425e84"),
                             Category = "Salads",
                             Name = "Cobb salad",
                             Price = 10,
@@ -501,7 +501,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2abcaa4f-48c3-4cb8-8ddb-9f17b5919415"),
+                            Id = new Guid("9de1240b-7eba-44fa-8d8f-60bfec5b906c"),
                             Category = "Salads",
                             Name = "Gado-gado",
                             Price = 10,
@@ -510,7 +510,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("de7fa028-57a9-42f7-9a03-9f6d4ea25b23"),
+                            Id = new Guid("f9a397ad-d4df-46b7-b12d-d406e5a52a43"),
                             Category = "Salads",
                             Name = "Larb",
                             Price = 10,
@@ -519,7 +519,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2de25b82-edf3-4cde-9e81-482b8971dc42"),
+                            Id = new Guid("7a0ad07c-64d7-45c2-a9d7-b1a86fb11f30"),
                             Category = "Fries",
                             Name = "Potato Wedges",
                             Price = 10,
@@ -528,7 +528,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1f3762e8-8ae0-4555-8015-86580117abc9"),
+                            Id = new Guid("a8832bfa-82fb-4752-bab2-9fc27d22ea3e"),
                             Category = "Fries",
                             Name = "Waffle Fries",
                             Price = 10,
@@ -537,7 +537,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("07dab7f9-c39e-416b-906b-e422df93b619"),
+                            Id = new Guid("1f4a9d89-40f6-4177-a5d2-ad19364b23b3"),
                             Category = "Fries",
                             Name = "Sweet Potato Fries",
                             Price = 10,
@@ -546,7 +546,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ff65392f-78fa-4271-9ebb-c57cd5aa175c"),
+                            Id = new Guid("72956b97-93f8-409e-a204-f19f5d0034cd"),
                             Category = "Fries",
                             Name = "Crinkle Cut Fries",
                             Price = 10,
@@ -555,7 +555,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5e13dece-a47d-4931-a046-ab2eaece3f84"),
+                            Id = new Guid("ee0d0faa-53f0-47a9-a1be-487e8755c4e6"),
                             Category = "Fries",
                             Name = "Steak Fries",
                             Price = 10,
@@ -564,7 +564,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c24782a0-9ec3-4d4e-b31c-6807e05f53ed"),
+                            Id = new Guid("a80eff89-2daf-47f0-853f-94fdba61e51b"),
                             Category = "Fries",
                             Name = "Standard Fries",
                             Price = 10,
@@ -573,7 +573,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7231a1ef-a997-4d51-bb33-81d33ca27dec"),
+                            Id = new Guid("e9409007-385d-434c-a313-26d9217a70b2"),
                             Category = "Fries",
                             Name = "Belgian Fries",
                             Price = 10,
@@ -582,7 +582,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("6be09928-950c-4e8d-ac96-b200d1c4bef2"),
+                            Id = new Guid("670d0f4c-a176-4412-bcc0-a9a231ec6203"),
                             Category = "Fries",
                             Name = "Shoestring Fries",
                             Price = 10,
@@ -591,7 +591,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0ff50c09-9bd0-4c18-a37a-deeba67e0c27"),
+                            Id = new Guid("27a062ab-9b65-4516-b481-c3c4f40b3dff"),
                             Category = "Fries",
                             Name = "Curly Fries",
                             Price = 10,
@@ -600,7 +600,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("70d710ee-14d1-4db9-a819-618bed16da84"),
+                            Id = new Guid("81fb2f70-c1d6-4195-b532-6f6c5abfd6b7"),
                             Category = "Drinks",
                             Name = "Coca-Cola",
                             Price = 10,
@@ -609,7 +609,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bd7219aa-2484-4ea7-8d2c-db97164aad16"),
+                            Id = new Guid("a0b62a26-3edd-4359-a252-f8c103c5821b"),
                             Category = "Drinks",
                             Name = "Pepsi",
                             Price = 10,
@@ -618,7 +618,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8aeb4e5b-b856-4aee-9ce1-3b021125999e"),
+                            Id = new Guid("8b27c78f-4cf3-468d-85c0-a2f0d3a1fe88"),
                             Category = "Drinks",
                             Name = "Nestlé S.A",
                             Price = 10,
@@ -627,7 +627,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("68d8b5a9-1fa2-4ae6-a03e-b1f10ef15acb"),
+                            Id = new Guid("5ced3c03-21d1-4b42-8ff1-4633e81bd8e4"),
                             Category = "Drinks",
                             Name = "Sprite",
                             Price = 10,
@@ -636,7 +636,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e792c66f-38d9-47fb-85f2-81e8056ee338"),
+                            Id = new Guid("10c9b634-0c96-43f6-a341-cbff437f0523"),
                             Category = "Drinks",
                             Name = "Mountain Dew",
                             Price = 10,
