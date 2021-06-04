@@ -74,7 +74,7 @@ namespace Pizza.Domain
                 Name = "Barbecue Chicken",
                 Price = 10,
                 Subtitle = "Tangy, rich, our homemade BBQ Chicken pizza",
-                TitleImagePath = "/images/menu_img4.jpg"
+                TitleImagePath = "/images/menu_img14.jpg"
             }, new Product
             {
                 Id = Guid.NewGuid(),
