@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pizza.Domain;
 
 namespace Pizza.Migrations
 {
     [DbContext(typeof(PizzaDbContext))]
-    partial class PizzaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210604185155__initial2")]
+    partial class _initial2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,7 +51,7 @@ namespace Pizza.Migrations
                         new
                         {
                             Id = "44546e06-8719-4ad8-b88a-f271ae9d6eab",
-                            ConcurrencyStamp = "b0c10602-3b8f-4484-bee5-6b10b06da93d",
+                            ConcurrencyStamp = "fccf5be8-f262-40a8-9f01-e93184420886",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -148,12 +150,12 @@ namespace Pizza.Migrations
                         {
                             Id = "3b62472e-4f66-49fa-a20f-e7685b9565d8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "52580c06-5fe0-45f8-a084-e174833050ce",
+                            ConcurrencyStamp = "9c96c6fa-7caf-40e9-a054-e85e33bce758",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "admin@admin.com",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIsfnnTFcl0BMZ2WwH/UVj9xhj4wegeD+aFC8EcfnBP8USmiJBjICNHj91U7a0la+Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDHP9bemSaQuArpkk/KEghVoLyU81A2CBCZLC0WRwdlgQbQfhuwXMbcfMrC7alAQlA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -276,16 +278,16 @@ namespace Pizza.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("21b1bae2-a166-45f8-97d8-bd4ad7fe2876"),
+                            Id = new Guid("afdc384d-7402-4590-be36-fe36525532bd"),
                             Category = "Pizza",
                             Name = "Deluxe",
                             Price = 10,
                             Subtitle = "original & favorite specialty pizza topped",
-                            TitleImagePath = "/images/menu_img15.jpg"
+                            TitleImagePath = "/images/menu_img2.jpg"
                         },
                         new
                         {
-                            Id = new Guid("2d84dd16-0905-40dd-8f50-919ca2203eb8"),
+                            Id = new Guid("0c28fc98-f2c2-4877-80a6-1253dce3463b"),
                             Category = "Pizza",
                             Name = "Veggie",
                             Price = 10,
@@ -294,7 +296,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("66ffb7c2-1b84-4a98-9411-522702ab4a7b"),
+                            Id = new Guid("3035483b-16d3-47b5-b627-fee89d6a80f5"),
                             Category = "Pizza",
                             Name = "All Meat",
                             Price = 10,
@@ -303,7 +305,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f17cd12f-fff9-4685-b2fd-4fc0427c1d71"),
+                            Id = new Guid("ff31bded-6eed-44e8-9510-1ac676f58919"),
                             Category = "Pizza",
                             Name = "Barbecue Chicken",
                             Price = 10,
@@ -312,7 +314,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("802ae2f1-ac7d-492e-817e-ab56a572d323"),
+                            Id = new Guid("99d6f6fa-6e57-48a3-8b0e-3411f372ca06"),
                             Category = "Pizza",
                             Name = "Egg-ceptional",
                             Price = 10,
@@ -321,7 +323,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c78ca080-5a4d-4b81-b6b6-b90d73c4fa40"),
+                            Id = new Guid("12dbf5f5-2bd0-453f-8f54-d8671b4090ec"),
                             Category = "Pizza",
                             Name = "lunch Special Pizza",
                             Price = 10,
@@ -330,7 +332,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("99f44373-47f6-4527-b029-0e44fe7ecb47"),
+                            Id = new Guid("61594b98-ecc5-4383-be24-b5682f9e4441"),
                             Category = "Pizza",
                             Name = "Buffalo Chicken",
                             Price = 10,
@@ -339,7 +341,7 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("39fb3f0a-4c97-4234-a0d7-259d4d6c2d49"),
+                            Id = new Guid("a3cf8718-80b5-42b1-b9c5-500a419990ec"),
                             Category = "Pizza",
                             Name = "Tuscan Roma",
                             Price = 10,
@@ -348,97 +350,97 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b1737cf3-0105-43a9-9c5b-0d300d81330c"),
+                            Id = new Guid("31590848-d2e0-4549-b60c-a499fd600876"),
                             Category = "Pizza",
                             Name = "Mac & Cheese",
                             Price = 10,
                             Subtitle = "Pizza with Macaroni and Cheese",
-                            TitleImagePath = "/images/menu_img16.jpg"
+                            TitleImagePath = "/images/menu_img2.jpg"
                         },
                         new
                         {
-                            Id = new Guid("d889ce6f-a7d1-43cd-b3d8-cadbe405bf96"),
+                            Id = new Guid("8fe551ef-1e73-49fd-9af7-b63287dc376e"),
                             Category = "Burgers",
                             Name = "Luger Burger",
                             Price = 10,
                             Subtitle = "Luger Burger features extra thick bacon and more half pound of beef.",
+                            TitleImagePath = "/images/menu_img7.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("b70c0249-8fe1-42af-b539-fdaf33db7c7b"),
+                            Category = "Burgers",
+                            Name = "Le Pigeon Burger",
+                            Price = 10,
+                            Subtitle = "Le Pigeon Burger has smoky flavor enhanced with each topping",
+                            TitleImagePath = "/images/menu_img7.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("554fdff3-52d4-417a-b242-861c7f229a00"),
+                            Category = "Burgers",
+                            Name = "Taco Burger",
+                            Price = 12,
+                            Subtitle = "Tacos are amazing, no doubt about it; need this amazing combo",
+                            TitleImagePath = "/images/menu_img7.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("e54c5def-eb8b-40ef-9292-b80c5840ab7f"),
+                            Category = "Burgers",
+                            Name = "Chicken Burger",
+                            Price = 15,
+                            Subtitle = "The Chicken Caesar Burger is special because it retains the freshness of chicken",
                             TitleImagePath = "/images/menu_img8.jpg"
                         },
                         new
                         {
-                            Id = new Guid("90370eae-7e02-4aab-9881-b267fbff6a69"),
-                            Category = "Burgers",
-                            Name = "Le Pigeon Burger",
-                            Price = 10,
-                            Subtitle = "Le Pigeon Burger has smoky flavor enhanced with each topping",
-                            TitleImagePath = "/images/menu_img17.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("55dc5996-a0df-4cd0-b419-69dc1600442d"),
-                            Category = "Burgers",
-                            Name = "Taco Burger",
-                            Price = 12,
-                            Subtitle = "Tacos are amazing, no doubt about it; need this amazing combo",
-                            TitleImagePath = "/images/menu_img18.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("5044f783-b07c-46e7-bd03-8d49ad87cd05"),
-                            Category = "Burgers",
-                            Name = "Chicken Burger",
-                            Price = 15,
-                            Subtitle = "The Chicken Caesar Burger is special because it retains the freshness of chicken",
-                            TitleImagePath = "/images/menu_img19.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("616efb3e-28f0-42c0-b889-7bba38985530"),
+                            Id = new Guid("a5e20c0c-f512-4c52-9331-0bd087642dfd"),
                             Category = "Burgers",
                             Name = "Cheese Burger",
                             Price = 10,
                             Subtitle = "Easily the best burger in all of Germany, this enormous preparation",
-                            TitleImagePath = "/images/menu_img20.jpg"
+                            TitleImagePath = "/images/menu_img8.jpg"
                         },
                         new
                         {
-                            Id = new Guid("4120e14e-4213-4766-a059-3a7ab0a59d90"),
+                            Id = new Guid("3511fce2-a51f-4a2f-b357-d33448a3a715"),
                             Category = "Burgers",
                             Name = "Chicken Burger",
                             Price = 15,
                             Subtitle = "The Chicken Caesar Burger is special because it retains the freshness of chicken",
-                            TitleImagePath = "/images/menu_img21.jpg"
+                            TitleImagePath = "/images/menu_img8.jpg"
                         },
                         new
                         {
-                            Id = new Guid("4826609f-3f19-42c1-927e-70ee4e3ca01f"),
+                            Id = new Guid("70bf0a24-8138-4cb5-b1d9-e6affac5054f"),
                             Category = "Burgers",
                             Name = "Luger Burger",
                             Price = 10,
                             Subtitle = "Luger Burger features extra thick bacon and more half pound of beef.",
-                            TitleImagePath = "/images/menu_img22.jpg"
+                            TitleImagePath = "/images/menu_img7.jpg"
                         },
                         new
                         {
-                            Id = new Guid("c6526e30-5e90-4f9f-9b9d-39aa630a1503"),
+                            Id = new Guid("ad7fbecd-4c7d-4877-bb06-f32865cb2d78"),
                             Category = "Burgers",
                             Name = "Le Pigeon Burger",
                             Price = 10,
                             Subtitle = "Le Pigeon Burger has smoky flavor enhanced with each topping",
-                            TitleImagePath = "/images/menu_img23.jpg"
+                            TitleImagePath = "/images/menu_img7.jpg"
                         },
                         new
                         {
-                            Id = new Guid("61277b29-ab92-4402-9660-65b5201f8182"),
+                            Id = new Guid("9b7de6e6-c8af-4f06-ac07-2d7b7e89f196"),
                             Category = "Burgers",
                             Name = "Taco Burger",
                             Price = 12,
                             Subtitle = "Tacos are amazing, no doubt about it; need this amazing combo",
-                            TitleImagePath = "/images/menu_img24.jpg"
+                            TitleImagePath = "/images/menu_img7.jpg"
                         },
                         new
                         {
-                            Id = new Guid("b85ca3e7-c17b-4d40-b960-0f0b76e5f769"),
+                            Id = new Guid("98c265bc-090a-493c-9a77-72f8613a3fbd"),
                             Category = "Salads",
                             Name = "Cobb salad",
                             Price = 10,
@@ -447,34 +449,34 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("9eebf53a-fe1f-4cce-a251-cf20a5ff3c6d"),
+                            Id = new Guid("968147be-c8ea-4920-96b9-e291247d3362"),
                             Category = "Salads",
                             Name = "Larb",
                             Price = 10,
                             Subtitle = "It's usually served with raw vegetables and sticky rice. vegetables",
-                            TitleImagePath = "/images/menu_img25.jpg"
+                            TitleImagePath = "/images/menu_img9.jpg"
                         },
                         new
                         {
-                            Id = new Guid("1a27be8d-c88a-4dcb-a908-31ef9a1e9717"),
+                            Id = new Guid("8c04e4a5-6fef-4cef-8d85-c3cd6115cde9"),
                             Category = "Salads",
                             Name = "Cobb salad",
                             Price = 10,
                             Subtitle = "The only way to make this dish heavier is to add bricks",
-                            TitleImagePath = "/images/menu_img26.jpg"
+                            TitleImagePath = "/images/menu_img9.jpg"
                         },
                         new
                         {
-                            Id = new Guid("3f3bc082-8eae-4b50-9670-f21d5c69b830"),
+                            Id = new Guid("bd620fb9-b8c0-4403-a756-882de9a8efc0"),
                             Category = "Salads",
                             Name = "Waldorf salad",
                             Price = 10,
                             Subtitle = "Unlike the many folk salads featured here, Waldorf salad",
-                            TitleImagePath = "/images/menu_img27.jpg"
+                            TitleImagePath = "/images/menu_img9.jpg"
                         },
                         new
                         {
-                            Id = new Guid("3aacfe57-1c81-4283-b492-7fc3d1ee471b"),
+                            Id = new Guid("1f3d5985-b7af-4999-a2a4-b60587973b7c"),
                             Category = "Salads",
                             Name = "Gado-gado",
                             Price = 10,
@@ -483,52 +485,124 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("afa369f2-bb52-466e-84a7-62e3e0a83fd7"),
+                            Id = new Guid("a89e38c4-c8ad-45f8-bf02-c5a6189304fa"),
                             Category = "Salads",
                             Name = "Larb",
                             Price = 10,
                             Subtitle = "It's usually served with raw vegetables and sticky rice. vegetables",
-                            TitleImagePath = "/images/menu_img28.jpg"
+                            TitleImagePath = "/images/menu_img9.jpg"
                         },
                         new
                         {
-                            Id = new Guid("bc504db5-e097-4749-a298-6ea0169db6a7"),
+                            Id = new Guid("f3eea6e5-6bfc-476a-9aca-da716843447a"),
                             Category = "Salads",
                             Name = "Cobb salad",
                             Price = 10,
                             Subtitle = "The only way to make this dish heavier is to add bricks.",
-                            TitleImagePath = "/images/menu_img29.jpg"
+                            TitleImagePath = "/images/menu_img9.jpg"
                         },
                         new
                         {
-                            Id = new Guid("2c086370-286a-48a4-9c82-8a1dbf2ba50b"),
+                            Id = new Guid("da457e8c-bbb5-47a0-b675-103ceb7c7cca"),
                             Category = "Salads",
                             Name = "Gado-gado",
                             Price = 10,
                             Subtitle = "Gado-gado literally means \"mix - mix.\" It's an Indonesian",
-                            TitleImagePath = "/images/menu_img30.jpg"
+                            TitleImagePath = "/images/menu_img10.jpg"
                         },
                         new
                         {
-                            Id = new Guid("ee861a4e-470d-42a6-9040-fa0a896f9357"),
+                            Id = new Guid("ab327f8d-2a33-408a-a75b-148a546ee8cf"),
                             Category = "Salads",
                             Name = "Larb",
                             Price = 10,
                             Subtitle = "It's usually served with raw vegetables and sticky rice. vegetables",
-                            TitleImagePath = "/images/menu_img31.jpg"
+                            TitleImagePath = "/images/menu_img9.jpg"
                         },
                         new
                         {
-                            Id = new Guid("a4dc6a6d-6577-418b-a26e-43b6fed765d3"),
+                            Id = new Guid("f1039a75-e76f-417c-96bf-3567f27905fc"),
                             Category = "Fries",
                             Name = "Potato Wedges",
                             Price = 10,
                             Subtitle = "Potato wedges sit at the very bottom of the french fry totem pole",
+                            TitleImagePath = "/images/menu_img11.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("bb75ffa5-4fd9-4aad-a750-b436a0c072b8"),
+                            Category = "Fries",
+                            Name = "Waffle Fries",
+                            Price = 10,
+                            Subtitle = "Waffle fries have the exact opposite problem of the potato wedges",
                             TitleImagePath = "/images/menu_img12.jpg"
                         },
                         new
                         {
-                            Id = new Guid("c0b79d2a-81d5-40c1-acf1-b94fb9124975"),
+                            Id = new Guid("ea674181-578f-4010-ae28-82228538080b"),
+                            Category = "Fries",
+                            Name = "Sweet Potato Fries",
+                            Price = 10,
+                            Subtitle = "We don't hate sweet potato fries, but we certainly don't love them",
+                            TitleImagePath = "/images/menu_img11.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("3a76f75d-d0c5-42d0-b707-21567ab66981"),
+                            Category = "Fries",
+                            Name = "Crinkle Cut Fries",
+                            Price = 10,
+                            Subtitle = "Crinkle cut fries just look like a good time. They're thick and heavy",
+                            TitleImagePath = "/images/menu_img11.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("4ef845ef-d197-4fb7-9b2f-4c7472ac0b36"),
+                            Category = "Fries",
+                            Name = "Steak Fries",
+                            Price = 10,
+                            Subtitle = "Steak fries might seem like the less fun-looking version of crinkle cut fries",
+                            TitleImagePath = "/images/menu_img11.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("869a5463-c1f2-4cf2-af16-8d4e371222bf"),
+                            Category = "Fries",
+                            Name = "Standard Fries",
+                            Price = 10,
+                            Subtitle = "Ah, the standard fry—the one that started it all. Despite the fact",
+                            TitleImagePath = "/images/menu_img11.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("7ffa30a0-c369-4405-9506-da4fbba42602"),
+                            Category = "Fries",
+                            Name = "Belgian Fries",
+                            Price = 10,
+                            Subtitle = "Belgian fries might look like the typical fry experience, but they most",
+                            TitleImagePath = "/images/menu_img11.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("efeffe0c-5665-433b-bf06-edd74a14cc42"),
+                            Category = "Fries",
+                            Name = "Shoestring Fries",
+                            Price = 10,
+                            Subtitle = "Despite the fact that shoestring fries aren't quite as crunchy",
+                            TitleImagePath = "/images/menu_img11.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("2878d04f-efe6-4a83-b4c4-495469f69709"),
+                            Category = "Fries",
+                            Name = "Curly Fries",
+                            Price = 10,
+                            Subtitle = "There's something so satisfying about curly fries. First of all",
+                            TitleImagePath = "/images/menu_img11.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("3fe2f198-9819-4879-b7d5-580eb23cfd6c"),
                             Category = "Drinks",
                             Name = "Coca-Cola",
                             Price = 10,
@@ -537,57 +611,39 @@ namespace Pizza.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b0938cba-0db7-4809-a179-7b68e589a6af"),
+                            Id = new Guid("cf8535c5-90f4-47f3-8161-170d2cf487af"),
                             Category = "Drinks",
-                            Name = "Schweppes Pomegranate",
+                            Name = "Pepsi",
                             Price = 10,
-                            Subtitle = "Schweppes Pomegranate is synonymous with instant coffee, bottled water, crunches",
-                            TitleImagePath = "/images/menu_img35.jpg"
+                            Subtitle = "Pepsi is a cola drink type manufactured by PepsiCo",
+                            TitleImagePath = "/images/menu_img13.jpg"
                         },
                         new
                         {
-                            Id = new Guid("8fbfd9a5-2f8d-4206-b840-cf9faaa5662c"),
+                            Id = new Guid("6f23cc43-4fc5-4edf-a8db-bf1a4eedc9ba"),
+                            Category = "Drinks",
+                            Name = "Nestlé S.A",
+                            Price = 10,
+                            Subtitle = "Nestle is synonymous with instant coffee, bottled water, crunches",
+                            TitleImagePath = "/images/menu_img13.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("03110d6c-410e-4383-a9cd-53361431f8d3"),
                             Category = "Drinks",
                             Name = "Sprite",
                             Price = 10,
                             Subtitle = "Sprite is a colorless, lime-lemon flavored, non-caffeinated soft",
-                            TitleImagePath = "/images/menu_img33.jpg"
+                            TitleImagePath = "/images/menu_img13.jpg"
                         },
                         new
                         {
-                            Id = new Guid("b0b87626-34cc-401b-bb82-cbdf998f560b"),
+                            Id = new Guid("0ec22c2b-d8ed-4b5e-81b5-a6a99a10c210"),
                             Category = "Drinks",
-                            Name = "Coca-Cola",
+                            Name = "Mountain Dew",
                             Price = 10,
-                            Subtitle = "Coca-Cola is the most popular drink in the world",
-                            TitleImagePath = "/images/menu_img34.jpg"
-                        },
-                        new
-                        {
-                            Id = new Guid("49d78050-5d3d-40a6-b949-62d4b4124118"),
-                            Category = "Drinks",
-                            Name = "Schweppes Mojito",
-                            Price = 10,
-                            Subtitle = "Schweppes Mojito is synonymous with instant coffee, bottled water, crunches",
-                            TitleImagePath = "/images/menu_img37.png"
-                        },
-                        new
-                        {
-                            Id = new Guid("cdae04d3-6387-4799-a12a-ae453a650766"),
-                            Category = "Drinks",
-                            Name = "Fanta",
-                            Price = 10,
-                            Subtitle = "Fanta is synonymous with instant coffee, bottled water, crunches",
-                            TitleImagePath = "/images/menu_img39.jpeg"
-                        },
-                        new
-                        {
-                            Id = new Guid("d5e96a72-7b2b-4bf3-a3f7-aa2c88995c53"),
-                            Category = "Drinks",
-                            Name = "Fanta",
-                            Price = 10,
-                            Subtitle = "Fanta is synonymous with instant coffee, bottled water, crunches",
-                            TitleImagePath = "/images/menu_img32.png"
+                            Subtitle = "This is yet another PepsiCo carbonated soft drink.It comes",
+                            TitleImagePath = "/images/menu_img13.jpg"
                         });
                 });
 
