@@ -123,10 +123,43 @@
                                                         </div>
                                                     }
                                                 }
+                                                @if (User.IsInRole("admin"))
+                                                {
+                                                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="P_itmesbox">
+                                                            <div class="PT_image"><img src="~/images/add.jpg" class="absoImg"></div>
+                                                            <div class="PT_dscr">
+                                                                <h3 class="PT_title">Добавить товар</h3>
+                                                                <p class="PT_dtls">
+                                                                    Добавление товара
+                                                                </p>
+                                                                <div class="PT_optn">
+                                                                    <ul class="PT-radio">
+                                                                        <li>
+                                                                            <input type="radio" name="radio-group-1" id="radio-1" checked="checked" />
+                                                                            <label for="radio-1">Medium</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="radio" name="radio-group-1" id="radio-2" />
+                                                                            <label for="radio-2">Large</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <input type="radio" name="radio-group-1" id="radio-3" />
+                                                                            <label for="radio-3">Extra Large</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="price_block">
+                                                                    <div class="price">$ 00</div>
+                                                                    <a asp-area="Admin" asp-controller="AddProduct" asp-action="Create" class="card_btn">Добавить</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                             <div id="burger1" class=" tab-pane fade">
